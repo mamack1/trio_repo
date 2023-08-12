@@ -15,6 +15,8 @@ func get_input(delta):
 	if Input.is_action_just_pressed("jump"):
 		if (is_on_floor()):
 			velocity.y += jump_speed
+		if (is_on_ceiling()):
+			velocity.y -= jump_speed
 	if Input.is_action_just_pressed("grav_shift"):
 			touching_floor()
 			
