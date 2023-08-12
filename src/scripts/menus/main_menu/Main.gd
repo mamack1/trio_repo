@@ -3,7 +3,7 @@ extends Control
 onready var options_menu = $OptionsMenu
 
 func _on_start_button_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://util/test_level/test_level.tscn")
 
 
 func _on_options_button_pressed():
