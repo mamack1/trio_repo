@@ -14,6 +14,10 @@ config/name="Techwise Trio Project"
 run/main_scene="res://scenes/menus/main_manu/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalSettings="*res://src/global_settings.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
