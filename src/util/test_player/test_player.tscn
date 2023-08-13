@@ -13,3 +13,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" parent="." instance=ExtResource( 1 )]
 scale = Vector2( 0.2, 0.2 )
+
+[node name="CoyoteJumpTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
