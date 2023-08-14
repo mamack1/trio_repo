@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/sprites/player_sprite.png" type="Texture" id=1]
 
@@ -51,6 +51,40 @@ tracks/0/keys = {
 "values": [ 1, 0 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "run_left"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19, 12 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "run_right"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 5, 6, 7, 0 ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 __meta__ = {
 "_edit_group_": true
@@ -67,3 +101,5 @@ frame = 1
 anims/RESET = SubResource( 1 )
 anims/idle_left = SubResource( 2 )
 anims/idle_right = SubResource( 3 )
+anims/run_left = SubResource( 5 )
+anims/run_right = SubResource( 4 )
