@@ -9,14 +9,15 @@ var air_jump = false
 const ACCELERATION = 800.0
 const FRICTION = 1000.0
 
-onready var Animated_Sprite = $AnimatedSprite
 onready var coyote_jump_timer  = $CoyoteJumpTimer
-
+onready var animated_sprite_2d = $Sprite2D
 
 func get_input(delta):
 	velocity.x = 0
 	if Input.is_action_pressed('move_right'):
+		animated_sprite_2d.play("run")
 		velocity.x += speed
+		
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= speed
 		
@@ -24,7 +25,9 @@ func get_input(delta):
 	var input_axis = Input.get_axis("move_left", "move_right")
 	handle_acceleration(input_axis, delta)
 	apply_friction(input_axis, delta)
-				
+	update_animations(input_axis)	
+	
+			
 	if Input.is_action_just_pressed("grav_shift"):
 			touching_floor()		
 	velocity.y += gravity * delta
@@ -78,6 +81,15 @@ func grav_shift():
 func touching_floor():
 	if (is_on_floor()) or (is_on_ceiling()):
 		grav_shift()
-
+		
+func update_animations(input_axis):
+	if input_axis != 0:
+		animated_sprite_2d.flip_h = (input_axis < 0)
+		animated_sprite_2d.play("run")
+	else:
+		animated_sprite_2d.play("idle")		
+	if not is_on_floor():
+		animated_sprite_2d.play("jump")
+		
 func _physics_process(delta):
 	get_input(delta)
