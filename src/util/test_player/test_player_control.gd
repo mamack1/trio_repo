@@ -71,9 +71,11 @@ func handle_jump():
 			
 func grav_shift():
 	if gravity_state == false:
+		animated_sprite_2d.flip_v = false
 		gravity += 400
 		gravity_state = true
 	else:
+		animated_sprite_2d.flip_v = true
 		gravity -= 400
 		gravity_state = false
 		print('Yoyo')
