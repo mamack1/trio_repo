@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
-var speed : int = 400
-var jump_speed : int = -200
+var speed : int = 100
+var jump_speed : int = -300
 var gravity : int = 200
 var gravity_state = true
 var velocity = Vector2()
 var air_jump = false
+const ACCELERATION = 600.0
+const FRICTION = 1000.0
 
 onready var Animated_Sprite = $AnimatedSprite
 onready var coyote_jump_timer  = $CoyoteJumpTimer
@@ -17,6 +19,39 @@ func get_input(delta):
 		velocity.x += speed
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= speed
+		
+	handle_jump()			
+	var input_axis = Input.get_axis("move_left", "move_right")
+	handle_acceleration(input_axis, delta)
+	apply_friction(input_axis, delta)
+				
+	if Input.is_action_just_pressed("grav_shift"):
+			touching_floor()
+			
+	velocity.y += gravity * delta
+
+	var was_on_floor = is_on_floor()
+	velocity = move_and_slide(velocity, Vector2.UP)
+	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
+	if just_left_ledge:
+		coyote_jump_timer.start()
+
+func handle_acceleration(input_axis, delta):
+	if input_axis != 0:
+		velocity.x =  move_toward(velocity.x, speed * input_axis, ACCELERATION * delta)	
+		
+func apply_friction(input_axis, delta):
+	if input_axis == 0:
+		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+	
+func handle_jump():
+	if is_on_floor():
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = jump_speed
+	else:
+		if Input.is_action_just_released("jump") and velocity.y < jump_speed / 2:
+			velocity.y = jump_speed / 2	
+		
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor(): air_jump = true
 		
@@ -30,16 +65,6 @@ func get_input(delta):
 				
 			if (is_on_ceiling()):
 				velocity.y -= jump_speed
-	if Input.is_action_just_pressed("grav_shift"):
-			touching_floor()
-			
-	velocity.y += gravity * delta
-
-	var was_on_floor = is_on_floor()
-	velocity = move_and_slide(velocity, Vector2.UP)
-	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
-	if just_left_ledge:
-		coyote_jump_timer.start()
 			
 func grav_shift():
 	if gravity_state == false:
