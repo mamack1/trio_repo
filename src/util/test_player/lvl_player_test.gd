@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-var speed : int = 200
+var speed : int = 225
 var jump_speed : int = -300
-var gravity : int = 500
+var gravity : int = 650
 var gravity_state = true
 var velocity = Vector2()
 var air_jump = false
@@ -47,7 +47,8 @@ func apply_friction(input_axis, delta):
 func handle_jump(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
-			velocity.y = jump_speed
+			velocity.y = jump_speed / 1000
+			
 	else:
 		if Input.is_action_just_released("jump") and velocity.y < jump_speed / 2:
 			velocity.y = jump_speed / 2	
@@ -74,11 +75,11 @@ func handle_jump(delta):
 func grav_shift():
 	if gravity_state == false:
 		animated_sprite_2d.flip_v = false
-		gravity += 1000
+		gravity += 1300
 		gravity_state = true
 	else:
 		animated_sprite_2d.flip_v = true
-		gravity -= 1000
+		gravity -= 1300
 		gravity_state = false
 		print('Yoyo')
 
