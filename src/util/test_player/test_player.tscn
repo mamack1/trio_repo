@@ -125,5 +125,6 @@ shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -50 )
+current = true
 
 [connection signal="area_entered" from="hazardDetect" to="." method="_on_hazardDetect_area_entered"]
