@@ -13,9 +13,6 @@ func set_is_paused(value):
 	get_tree().paused = is_paused
 	visible = is_paused
 
-func _ready():
-	pass
-
 func _on_resume_button_pressed():
 	self.is_paused = false
 
