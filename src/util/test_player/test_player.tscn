@@ -1,36 +1,16 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/sprites/player_sprite.png" type="Texture" id=2]
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 1200, 1200 )
 
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1200, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 1200, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1200, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 2400, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 3600, 0, 1200, 1200 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
@@ -52,39 +32,24 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 8400, 0, 1200, 1200 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 9600, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 10800, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 12000, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 13200, 0, 1200, 1200 )
+region = Rect2( 0, 0, 1200, 1200 )
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ null ],
+"frames": [ SubResource( 18 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 21 ) ],
 "loop": true,
 "name": "jump",
-"speed": 5.0
+"speed": 2.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 19 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0

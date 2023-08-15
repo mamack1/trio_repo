@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed : int = 100
+var speed : int = 200
 var jump_speed : int = -200
 var gravity : int = 200
 var gravity_state = true

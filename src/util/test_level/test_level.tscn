@@ -21,7 +21,6 @@ tile_data = PoolIntArray( -458766, 0, 0, -458765, 0, 0, -458764, 0, 0, -458763, 
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2( 1.11436, 1.20412 )
-current = true
 zoom = Vector2( 2, 2 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
