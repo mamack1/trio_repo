@@ -99,5 +99,5 @@ func _physics_process(delta):
 	get_input(delta)
 
 
-func _on_hazardDetect_area_entered(area):
+func _on_hazardDetect_area_entered(_area):
 	global_position = starting_position
