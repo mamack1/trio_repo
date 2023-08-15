@@ -7,7 +7,7 @@ var gravity_state = true
 var velocity = Vector2()
 var air_jump = false
 
-onready var Animated_Sprite = $AnimatedSprite
+onready var animated_sprite_2d = $Sprite2D
 onready var coyote_jump_timer  = $CoyoteJumpTimer
 onready var starting_position = global_position
 
@@ -57,7 +57,6 @@ func touching_floor():
 
 func _physics_process(delta):
 	get_input(delta)
-
 
 func _on_hazardDetect_area_entered(area):
 	global_position = starting_position
