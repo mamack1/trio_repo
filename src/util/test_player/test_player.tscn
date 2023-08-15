@@ -2,11 +2,6 @@
 
 [ext_resource path="res://Assets/sprites/player_sprite.png" type="Texture" id=2]
 
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 1200, 1200 )
-
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 2 )
@@ -79,7 +74,7 @@ region = Rect2( 13200, 0, 1200, 1200 )
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 2 ) ],
+"frames": [ null ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -96,7 +91,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15.5, 30 )
+extents = Vector2( 16, 26.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 14, 25.5 )
@@ -130,6 +125,5 @@ shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -50 )
-current = true
 
 [connection signal="area_entered" from="hazardDetect" to="." method="_on_hazardDetect_area_entered"]
