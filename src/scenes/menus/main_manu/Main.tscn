@@ -42,9 +42,16 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 0.5
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -54,15 +61,35 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 
-[node name="title" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 151.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_right = 1280.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="flip" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 151.0
+margin_right = 638.0
 margin_bottom = 206.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 1 )
-text = "INSERT TITLE HERE"
-align = 1
+text = "FLIP"
+align = 2
+valign = 1
+
+[node name="flop" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 642.0
+margin_top = 151.0
+margin_right = 1280.0
+margin_bottom = 206.0
+rect_rotation = -180.0
+rect_pivot_offset = Vector2( 64.683, 25.183 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "FLOP"
 valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
