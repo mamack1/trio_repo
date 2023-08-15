@@ -10,6 +10,8 @@ const ACCELERATION = 800.0
 const FRICTION = 1000.0
 
 onready var coyote_jump_timer  = $CoyoteJumpTimer
+onready var starting_position = global_position
+
 onready var animated_sprite_2d = $Sprite2D
 
 func get_input(delta):
@@ -71,9 +73,11 @@ func handle_jump():
 			
 func grav_shift():
 	if gravity_state == false:
+		animated_sprite_2d.flip_v = false
 		gravity += 400
 		gravity_state = true
 	else:
+		animated_sprite_2d.flip_v = true
 		gravity -= 400
 		gravity_state = false
 		print('Yoyo')
@@ -93,3 +97,7 @@ func update_animations(input_axis):
 		
 func _physics_process(delta):
 	get_input(delta)
+
+
+func _on_hazardDetect_area_entered(area):
+	global_position = starting_position

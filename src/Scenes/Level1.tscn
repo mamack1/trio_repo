@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/sprites/TileMap.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/hazards/spike.tscn" type="PackedScene" id=3]
+
+[node name="Level1" type="Node2D"]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 577, 231 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 80, 60 )
+format = 1
+tile_data = PoolIntArray( 4, 1610612737, 0, 5, 1610612737, 0, 6, 1610612737, 0, 7, 1610612737, 0, 8, 1610612737, 0, 9, 1610612737, 0, 10, 1610612737, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0 )
+
+[node name="spike" parent="." instance=ExtResource( 3 )]
+position = Vector2( 380, 460 )
