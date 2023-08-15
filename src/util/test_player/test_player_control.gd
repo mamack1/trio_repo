@@ -28,7 +28,6 @@ func get_input(delta):
 	handle_acceleration(input_axis, delta)
 	apply_friction(input_axis, delta)
 	update_animations(input_axis)	
-	
 			
 	if Input.is_action_just_pressed("grav_shift"):
 			touching_floor()		
@@ -97,7 +96,6 @@ func update_animations(input_axis):
 		
 func _physics_process(delta):
 	get_input(delta)
-
 
 func _on_hazardDetect_area_entered(area):
 	global_position = starting_position

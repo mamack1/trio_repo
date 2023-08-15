@@ -1,6 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/sprites/player_sprite.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 1200, 1200 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
@@ -74,7 +79,7 @@ region = Rect2( 13200, 0, 1200, 1200 )
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ null ],
+"frames": [ SubResource( 18 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
