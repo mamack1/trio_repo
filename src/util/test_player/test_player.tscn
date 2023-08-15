@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Assets/sprites/player_sprite.png" type="Texture" id=2]
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 1200, 1200 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 2400, 0, 1200, 1200 )
@@ -39,12 +39,12 @@ region = Rect2( 0, 0, 1200, 1200 )
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 18 ) ],
+"frames": [ SubResource( 22 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ) ],
+"frames": [ SubResource( 23 ) ],
 "loop": true,
 "name": "jump",
 "speed": 2.0
@@ -56,10 +56,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 26.5 )
+extents = Vector2( 15, 30 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14, 25.5 )
+extents = Vector2( 13, 22 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 collision_layer = 2
@@ -70,10 +70,11 @@ position = Vector2( 2, -1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 14 )
 animation = "jump"
+playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, -2 )
+position = Vector2( 2, -1 )
 shape = SubResource( 1 )
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
@@ -85,7 +86,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hazardDetect"]
-position = Vector2( 0, 3.5 )
+position = Vector2( 2, -1 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

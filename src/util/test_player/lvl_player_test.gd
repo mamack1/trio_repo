@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 var speed : int = 200
-var jump_speed : int = -200
-var gravity : int = 200
+var jump_speed : int = -300
+var gravity : int = 500
 var gravity_state = true
 var velocity = Vector2()
 var air_jump = false
@@ -23,7 +23,7 @@ func get_input(delta):
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= speed
 		
-	handle_jump()			
+	handle_jump(delta)			
 	var input_axis = Input.get_axis("move_left", "move_right")
 	handle_acceleration(input_axis, delta)
 	apply_friction(input_axis, delta)
@@ -44,7 +44,7 @@ func apply_friction(input_axis, delta):
 	if input_axis == 0:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 	
-func handle_jump():
+func handle_jump(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = jump_speed
@@ -60,7 +60,7 @@ func handle_jump():
 			
 		if not is_on_floor():
 			if Input.is_action_just_pressed("jump") and air_jump:
-				velocity.y += jump_speed * 0.8
+				velocity.y += jump_speed * delta
 				air_jump = false
 				
 			if (is_on_ceiling()):
@@ -74,11 +74,11 @@ func handle_jump():
 func grav_shift():
 	if gravity_state == false:
 		animated_sprite_2d.flip_v = false
-		gravity += 400
+		gravity += 1000
 		gravity_state = true
 	else:
 		animated_sprite_2d.flip_v = true
-		gravity -= 400
+		gravity -= 1000
 		gravity_state = false
 		print('Yoyo')
 
@@ -93,7 +93,13 @@ func update_animations(input_axis):
 	else:
 		animated_sprite_2d.play("idle")		
 	if not is_on_floor():
-		animated_sprite_2d.play("jump")
+		if is_on_ceiling():
+			animated_sprite_2d.play("idle")
+			if input_axis != 0:
+				animated_sprite_2d.flip_h = (input_axis < 0)
+				animated_sprite_2d.play("run")
+		else:
+			animated_sprite_2d.play("jump")
 		
 func _physics_process(delta):
 	get_input(delta)
