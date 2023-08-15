@@ -11,13 +11,9 @@ onready var music_val = $Options/OptionsGrid/MusicSlider
 #	pass
 
 
-#func _on_FCButton_toggled(button_pressed):
-#	GlobalSettings.toggle_fullscreen(button_pressed)
-#	
-
-
 func _on_FCButton_toggled(button_pressed):
 	GlobalSettings.toggle_fullscreen(button_pressed)
+
 	
 #func _on_MasterSlider_value_changed(value):
 #	GlobalSettings.update_master_vol(value)
