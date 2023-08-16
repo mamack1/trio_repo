@@ -88,7 +88,7 @@ animations = [ {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 19 ) ],
 "loop": true,
 "name": "run",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -106,7 +106,7 @@ position = Vector2( 2, -1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 14 )
 animation = "death"
-frame = 5
+frame = 3
 playing = true
 flip_h = true
 
