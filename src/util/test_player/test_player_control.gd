@@ -52,26 +52,20 @@ func apply_friction(input_axis, delta):
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 	
 func handle_jump():
-	if is_on_floor():
+	if is_on_floor(): air_jump = true
+	if is_on_floor() or coyote_jump_timer.time_left > 0.0:
 		if Input.is_action_just_pressed("jump"):
-			velocity.y = jump_speed
-	else:
+			velocity.y += jump_speed
+	if not is_on_floor():
 		if Input.is_action_just_released("jump") and velocity.y < jump_speed / 2:
 			velocity.y = jump_speed / 2	
-		
-	if Input.is_action_just_pressed("jump"):
-		if is_on_floor(): air_jump = true
-		
-		if (is_on_floor()) or coyote_jump_timer.time_left > 0.0:
-			velocity.y += jump_speed
 			
-		if not is_on_floor():
-			if Input.is_action_just_pressed("jump") and air_jump:
-				velocity.y += jump_speed * 0.8
-				air_jump = false
+		if Input.is_action_just_pressed("jump") and air_jump:	
+			velocity.y += jump_speed * 0.8
+			air_jump = false
 				
-			if (is_on_ceiling()):
-				velocity.y -= jump_speed
+		if (is_on_ceiling()):
+			velocity.y -= jump_speed
 				
 	var was_on_floor = is_on_floor()
 	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
