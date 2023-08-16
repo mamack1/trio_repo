@@ -24,6 +24,7 @@ func get_input(delta):
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= speed
 		
+	# handle_wall_jump()	
 	handle_jump()			
 	var input_axis = Input.get_axis("move_left", "move_right")
 	handle_acceleration(input_axis, delta)
@@ -51,6 +52,17 @@ func apply_friction(input_axis, delta):
 	if input_axis == 0:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 	
+	# wall_jump	- having issue with get_wall_normal()
+"""func handle_wall_jump():
+	if not is_on_wall(): return
+	var wall_normal = get_wall_normal()
+	if Input.is_action_just_pressed("move_left") and wall_normal == Vector2.LEFT:
+		velocity.x = wall_normal.x * speed
+		velocity.y += jump_speed
+	if Input.is_action_just_pressed("move_right") and wall_normal == Vector2.RIGHT:
+		velocity.x = wall_normal.x * speed
+		velocity.y += jump_speed"""
+		
 func handle_jump():
 	if is_on_floor(): air_jump = true
 	if is_on_floor() or coyote_jump_timer.time_left > 0.0:
