@@ -3,7 +3,7 @@ extends Control
 onready var options_menu = $OptionsMenu
 
 func _on_start_button_pressed():
-	get_tree().change_scene("res://Scenes/Level1.tscn")
+	get_tree().change_scene("res://scenes/levels/level_1/Level1.tscn")
 
 
 func _on_options_button_pressed():
