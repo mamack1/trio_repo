@@ -80,7 +80,7 @@ custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-text = "START"
+text = "RESUME"
 icon_align = 1
 
 [node name="options_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
