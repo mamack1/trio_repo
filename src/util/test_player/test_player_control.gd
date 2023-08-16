@@ -8,6 +8,7 @@ var velocity = Vector2()
 var air_jump = false
 const ACCELERATION = 800.0
 const FRICTION = 1000.0
+var air_acceleration = 400
 
 onready var coyote_jump_timer  = $CoyoteJumpTimer
 onready var starting_position = global_position
@@ -26,6 +27,7 @@ func get_input(delta):
 	handle_jump()			
 	var input_axis = Input.get_axis("move_left", "move_right")
 	handle_acceleration(input_axis, delta)
+	handle_air_acceleration(input_axis, delta)
 	apply_friction(input_axis, delta)
 	update_animations(input_axis)	
 			
@@ -36,8 +38,14 @@ func get_input(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func handle_acceleration(input_axis, delta):
+	if not is_on_floor(): return
 	if input_axis != 0:
 		velocity.x =  move_toward(velocity.x, speed * input_axis, ACCELERATION * delta)	
+		
+func handle_air_acceleration(input_axis, delta):
+	if is_on_floor(): return
+	if input_axis != 0:
+		velocity.x = move_toward(velocity.x, speed * input_axis, air_acceleration * delta)
 		
 func apply_friction(input_axis, delta):
 	if input_axis == 0:
