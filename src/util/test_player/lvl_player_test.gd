@@ -4,6 +4,7 @@ extends KinematicBody2D
 export var speed : int = 225
 export var jump_speed : int = -300
 export var gravity : int = 650
+export var rev_grav : int = gravity * 2
 export var velocity = Vector2()
 export var ACCELERATION = 800.0
 export var FRICTION = 1000.0
@@ -83,12 +84,12 @@ func handle_jump(delta):
 func grav_shift():
 	if gravity_state == false:
 		animated_sprite_2d.flip_v = false
-		gravity += 1300
+		gravity += rev_grav
 		gravity_state = true
 		inverter.hide()
 	else:
 		animated_sprite_2d.flip_v = true
-		gravity -= 1300
+		gravity -= rev_grav
 		gravity_state = false
 		inverter.show()
 		print('Yoyo')
