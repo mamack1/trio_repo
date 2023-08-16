@@ -1,40 +1,48 @@
 extends KinematicBody2D
 
-var speed : int = 225
-var jump_speed : int = -300
-var gravity : int = 650
+	#Export Variables
+export var speed : int = 225
+export var jump_speed : int = -300
+export var gravity : int = 650
+export var velocity = Vector2()
+export var ACCELERATION = 800.0
+export var FRICTION = 1000.0
+	
+	#Variables
 var gravity_state = true
-var velocity = Vector2()
 var air_jump = false
-const ACCELERATION = 800.0
-const FRICTION = 1000.0
+var is_dead = false
 
+	#On Ready Variables
 onready var coyote_jump_timer  = $CoyoteJumpTimer
 onready var starting_position = global_position
-
 onready var animated_sprite_2d = $Sprite2D
+onready var death_timer = $player_reset
+onready var inverter = $"../inverter"
 
+	#Functions
 func get_input(delta):
-	velocity.x = 0
-	if Input.is_action_pressed('move_right'):
-		animated_sprite_2d.play("run")
-		velocity.x += speed
-		
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= speed
-		
-	handle_jump(delta)			
-	var input_axis = Input.get_axis("move_left", "move_right")
-	handle_acceleration(input_axis, delta)
-	apply_friction(input_axis, delta)
-	update_animations(input_axis)	
-	
+	if not is_dead:
+		velocity.x = 0
+		if Input.is_action_pressed('move_right'):
+			animated_sprite_2d.play("run")
+			velocity.x += speed
 			
-	if Input.is_action_just_pressed("grav_shift"):
-			touching_floor()		
-	velocity.y += gravity * delta
+		if Input.is_action_pressed("move_left"):
+			velocity.x -= speed
+			
+		handle_jump(delta)			
+		var input_axis = Input.get_axis("move_left", "move_right")
+		handle_acceleration(input_axis, delta)
+		apply_friction(input_axis, delta)
+		update_animations(input_axis)	
+		
+				
+		if Input.is_action_just_pressed("grav_shift"):
+				touching_floor()		
+		velocity.y += gravity * delta
 
-	velocity = move_and_slide(velocity, Vector2.UP)
+		velocity = move_and_slide(velocity, Vector2.UP)
 
 func handle_acceleration(input_axis, delta):
 	if input_axis != 0:
@@ -77,10 +85,12 @@ func grav_shift():
 		animated_sprite_2d.flip_v = false
 		gravity += 1300
 		gravity_state = true
+		inverter.hide()
 	else:
 		animated_sprite_2d.flip_v = true
 		gravity -= 1300
 		gravity_state = false
+		inverter.show()
 		print('Yoyo')
 
 func touching_floor():
@@ -88,23 +98,32 @@ func touching_floor():
 		grav_shift()
 		
 func update_animations(input_axis):
-	if input_axis != 0:
-		animated_sprite_2d.flip_h = (input_axis < 0)
-		animated_sprite_2d.play("run")
-	else:
-		animated_sprite_2d.play("idle")		
-	if not is_on_floor():
-		if is_on_ceiling():
-			animated_sprite_2d.play("idle")
-			if input_axis != 0:
-				animated_sprite_2d.flip_h = (input_axis < 0)
-				animated_sprite_2d.play("run")
+	if not is_dead:
+		if input_axis != 0:
+			animated_sprite_2d.flip_h = (input_axis < 0)
+			animated_sprite_2d.play("run")
 		else:
-			animated_sprite_2d.play("jump")
+			animated_sprite_2d.play("idle")		
+		if not is_on_floor():
+			if is_on_ceiling():
+				animated_sprite_2d.play("idle")
+				if input_axis != 0:
+					animated_sprite_2d.flip_h = (input_axis < 0)
+					animated_sprite_2d.play("run")
+			else:
+				animated_sprite_2d.play("jump")
 		
 func _physics_process(delta):
 	get_input(delta)
-
-
+	
 func _on_hazardDetect_area_entered(_area):
+	animated_sprite_2d.play("death")
+	is_dead = true
+	animated_sprite_2d.hide()
+	death_timer.start()
+
+func _on_player_reset_timeout():
 	global_position = starting_position
+	death_timer.stop()
+	is_dead = false
+	animated_sprite_2d.show()
