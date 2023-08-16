@@ -4,7 +4,7 @@ extends KinematicBody2D
 export var speed : int = 225
 export var jump_speed : int = -300
 export var gravity : int = 650
-export var rev_grav : int = gravity * gravity
+export var rev_grav : int = gravity * 2
 export var velocity = Vector2()
 export var ACCELERATION = 800.0
 export var FRICTION = 1000.0
