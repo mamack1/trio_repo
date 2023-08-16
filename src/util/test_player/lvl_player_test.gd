@@ -124,6 +124,10 @@ func _on_hazardDetect_area_entered(_area):
 
 func _on_player_reset_timeout():
 	global_position = starting_position
+	animated_sprite_2d.flip_v = false
+	gravity += 1300
+	gravity_state = true
+	inverter.hide()
 	death_timer.stop()
 	is_dead = false
 	animated_sprite_2d.show()
