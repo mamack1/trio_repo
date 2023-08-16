@@ -75,10 +75,10 @@ shader = SubResource( 4 )
 [node name="Level1" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -1110.0
-margin_top = -636.0
-margin_right = 1116.0
-margin_bottom = 639.0
+margin_left = -4260.0
+margin_top = -3320.0
+margin_right = 5000.0
+margin_bottom = 3700.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
@@ -167,7 +167,7 @@ tile_data = PoolIntArray( -524300, 1610612736, 0, -524299, 1610612736, 0, -52429
 [node name="inverter" type="Sprite" parent="."]
 visible = false
 material = SubResource( 5 )
-scale = Vector2( 3.5, 2 )
+scale = Vector2( 23, 23 )
 texture = ExtResource( 4 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 6 )]

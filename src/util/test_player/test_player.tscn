@@ -106,7 +106,7 @@ position = Vector2( 2, -1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 14 )
 animation = "death"
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
