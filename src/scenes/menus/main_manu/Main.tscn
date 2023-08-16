@@ -1,8 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/menus/main_menu/Main.gd" type="Script" id=2]
 [ext_resource path="res://scenes/menus/options_menu/options_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/styles/black_pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/styles/black_normal.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/styles/black_hover.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/styles/white_normal.tres" type="StyleBox" id=7]
+[ext_resource path="res://assets/styles/white_pressed.tres" type="StyleBox" id=8]
+[ext_resource path="res://assets/styles/white_hover.tres" type="StyleBox" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 61
@@ -11,30 +17,6 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 43
 font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 1, 1, 1, 0.117647 )
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 0.352941 )
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color( 1, 1, 1, 1 )
-shadow_size = 1
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
@@ -110,22 +92,23 @@ margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
 text = "START"
 icon_align = 1
 
 [node name="options_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 642.0
 margin_right = 1280.0
 margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 7 )
 text = "OPTIONS"
 icon_align = 1
 
@@ -142,22 +125,23 @@ margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
 text = "QUIT"
 icon_align = 1
 
 [node name="credits_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 642.0
 margin_right = 1280.0
 margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 7 )
 text = "CREDITS"
 icon_align = 1
 
@@ -170,4 +154,4 @@ margin_bottom = 600.0
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/quit_button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/credits_button" to="." method="_on_options_button_pressed"]
