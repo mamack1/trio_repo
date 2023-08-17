@@ -1,42 +1,17 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://util/test_player/lvl_player_test.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprites/player_sprite.png" type="Texture" id=2]
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 9600, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 10800, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 10800, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 13200, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 13200, 0, 1200, 1200 )
-
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 13200, 0, 1200, 1200 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 1200, 1200 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1200, 0, 1200, 1200 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
@@ -70,12 +45,7 @@ region = Rect2( 0, 0, 1200, 1200 )
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
-"loop": true,
-"name": "death",
-"speed": 3.0
-}, {
-"frames": [ SubResource( 22 ) ],
+"frames": [ SubResource( 22 ), SubResource( 24 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -105,10 +75,9 @@ script = ExtResource( 1 )
 position = Vector2( 2, -1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 14 )
-animation = "death"
+animation = "idle"
 frame = 1
 playing = true
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2, -1 )
