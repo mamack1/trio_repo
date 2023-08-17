@@ -33,10 +33,11 @@ radius = 10.0499
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0.341176, 0.337255, 0.721569, 1 )
 position = Vector2( 1.43051e-06, 4.76837e-07 )
 scale = Vector2( 2.625, 2.125 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
