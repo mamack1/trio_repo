@@ -1,16 +1,8 @@
 extends Node2D
 
+var score = 0 setget set_score
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func set_score(value):
+	score = value
+	get_node("/root/Hud/Display/SCORE").set_text("SCORE: "+ str(score))
+	

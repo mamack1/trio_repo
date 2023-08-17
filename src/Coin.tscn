@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/sprites/collectables/FlipFlopcoin.png" type="Texture" id=1]
+[ext_resource path="res://scripts/player/Coin.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 14.0
+
+[node name="Coin" type="Area2D"]
+position = Vector2( 30, 34 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -30, -34 )
+scale = Vector2( 0.253968, 0.24 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 13.4614, 6.00317, 18.0718, 13.1431 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -30, -34 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
