@@ -118,7 +118,6 @@ func _physics_process(delta):
 	get_input(delta)
 	
 func _on_hazardDetect_area_entered(_area):
-	animated_sprite_2d.play("death")
 	if animated_sprite_2d.flip_v:
 		grav_shift()
 	is_dead = true
@@ -127,9 +126,11 @@ func _on_hazardDetect_area_entered(_area):
 	
 
 func _on_player_reset_timeout():
+	velocity.y = 0
+	is_dead = false
 	global_position = starting_position
 	animated_sprite_2d.flip_v = false
 	inverter.hide()
 	death_timer.stop()
 	animated_sprite_2d.show()
-	is_dead = false
+	
