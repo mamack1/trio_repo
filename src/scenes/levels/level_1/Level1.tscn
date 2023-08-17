@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/tile_1.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Assets/sprites/spikes.png" type="Texture" id=4]
 [ext_resource path="res://Assets/sprites/tile_2.png" type="Texture" id=5]
 [ext_resource path="res://scenes/gui/gui.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )
@@ -82,18 +81,6 @@ margin_right = 5000.0
 margin_bottom = 3700.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
-
-[node name="Coin" parent="." instance=ExtResource( 7 )]
-position = Vector2( -751, 182 )
-
-[node name="Coin2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -592, -43 )
-
-[node name="Coin3" parent="." instance=ExtResource( 7 )]
-position = Vector2( -291, 52 )
-
-[node name="Coin4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 273, -96 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1000, 140 )
