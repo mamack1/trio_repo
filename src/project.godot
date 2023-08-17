@@ -31,6 +31,7 @@ default_bus_layout="res://src/default_bus_layout.tres"
 [autoload]
 
 GlobalSettings="*res://src/global_settings.gd"
+Hud="*res://HUD.tscn"
 
 [display]
 
