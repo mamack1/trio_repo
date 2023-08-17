@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/hazards/spike.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/sprites/tile_2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/tile_1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sprites/spikes.png" type="Texture" id=5]
+[ext_resource path="res://scenes/gui/gui.tscn" type="PackedScene" id=6]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "tile_1.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 216, 280, 88, 60 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "tile_2.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 216, 280, 88, 60 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+void fragment() {
+	vec4 inverted = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgba;
+	inverted.r = 1.0 - inverted.r;
+	inverted.g = 1.0 - inverted.g;
+	inverted.b = 1.0 - inverted.b;
+	COLOR.rgba = inverted;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+
+[node name="level_base" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -5967.0
+margin_top = -3919.0
+margin_right = 6531.0
+margin_bottom = 3101.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4095, 140 )
+
+[node name="spikes" type="Node2D" parent="."]
+
+[node name="spike_down" parent="spikes" instance=ExtResource( 2 )]
+position = Vector2( -3746, 526 )
+rotation = 3.14159
+
+[node name="spike_up" parent="spikes" instance=ExtResource( 2 )]
+position = Vector2( -4583, 527 )
+
+[node name="spike_right" parent="spikes" instance=ExtResource( 2 )]
+position = Vector2( -4206, 573 )
+rotation = 1.5708
+
+[node name="spike_left" parent="spikes" instance=ExtResource( 2 )]
+position = Vector2( -3947, 588 )
+rotation = -1.5708
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 85, 65 )
+show_collision = true
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( -983090, -1610612736, 0, -917554, -1610612736, 0, -852018, -1610612736, 0, -786482, -1610612736, 0, -720946, -1610612736, 0, -655410, -1610612736, 0, -589874, -1610612736, 0, -524338, -1610612736, 0, -458802, -1610612736, 0, -393266, -1610612736, 0, -327730, -1610612736, 0, -262194, -1610612736, 0, -196658, -1610612736, 0, -131122, -1610612736, 0, -65586, -1610612736, 0, -65585, 1610612737, 0, -65584, 1610612737, 0, -65583, 1610612737, 0, -50, -1610612736, 0, 65486, -1610612736, 0, 131022, -1610612736, 0, 196558, -1610612736, 0, 262094, -1610612736, 0, 262095, 1, 0, 262096, 1, 0, 262097, 1, 0, 327630, -1610612736, 0, 393166, -1610612736, 0, 458702, -1610612736, 0, 524238, -1610612736, 0, 589774, -1610612736, 0, 655310, -1610612736, 0, 720846, -1610612736, 0, 786382, -1610612736, 0, 851918, -1610612736, 0, 917454, -1610612736, 0, 982990, -1610612736, 0, 1048526, -1610612736, 0, 1114062, -1610612736, 0, 1179598, -1610612736, 0, 1245134, -1610612736, 0, 1310670, -1610612736, 0 )
+
+[node name="inverter" type="Sprite" parent="."]
+visible = false
+material = SubResource( 6 )
+scale = Vector2( 23, 23 )
+texture = ExtResource( 5 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
+
+[node name="collectables" type="Node2D" parent="."]

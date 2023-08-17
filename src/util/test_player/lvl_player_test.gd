@@ -106,7 +106,7 @@ func update_animations(input_axis):
 		else:
 			animated_sprite_2d.play("idle")		
 		if not is_on_floor():
-			if is_on_ceiling():
+			if animated_sprite_2d.flip_v :
 				animated_sprite_2d.play("idle")
 				if input_axis != 0:
 					animated_sprite_2d.flip_h = (input_axis < 0)
