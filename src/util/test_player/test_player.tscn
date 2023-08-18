@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://util/test_player/lvl_player_test.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprites/player_sprite.png" type="Texture" id=2]
-[ext_resource path="res://Assets/soundEffects/coin.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/soundEffects/jump.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/soundEffects/footsteps.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
@@ -82,6 +83,7 @@ position = Vector2( 2, -1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 14 )
 animation = "invert_run"
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -111,9 +113,14 @@ drag_margin_bottom = 0.02
 
 [node name="player_reset" type="Timer" parent="."]
 
-[node name="player_sound" type="AudioStreamPlayer" parent="."]
+[node name="jump_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -16.113
+
+[node name="walk_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -16.113
+pitch_scale = 2.01
 
 [connection signal="area_entered" from="hazardDetect" to="." method="_on_hazardDetect_area_entered"]
 [connection signal="timeout" from="player_reset" to="." method="_on_player_reset_timeout"]

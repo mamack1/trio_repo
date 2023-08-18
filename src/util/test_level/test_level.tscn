@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Key.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Coins.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Gem2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://util/enemy/Enemy.tscn" type="PackedScene" id=10]
 
 [node name="test_level" type="Node2D"]
 
@@ -27,6 +28,15 @@ tile_data = PoolIntArray( -458766, 0, 0, -458765, 0, 0, -458764, 0, 0, -458763, 
 scale = Vector2( 1.11436, 1.20412 )
 zoom = Vector2( 2, 2 )
 
+[node name="Enemy" parent="." instance=ExtResource( 10 )]
+position = Vector2( 332, -130 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -296, -141 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 10 )]
+position = Vector2( -197, -265 )
+
 [node name="Key" parent="." instance=ExtResource( 7 )]
 position = Vector2( -332, -114 )
 
@@ -39,14 +49,11 @@ position = Vector2( -116, -134 )
 [node name="Coins2" parent="." instance=ExtResource( 8 )]
 position = Vector2( -198, -203 )
 
-[node name="Coins3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -198, -263 )
-
 [node name="Coins4" parent="." instance=ExtResource( 8 )]
 position = Vector2( -198, -330 )
 
 [node name="Gem2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 372, -184 )
+position = Vector2( 372, -224 )
 
 [node name="Gem3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 436, -281 )
@@ -71,12 +78,6 @@ position = Vector2( 157, -134 )
 
 [node name="Gems3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 228, -134 )
-
-[node name="Gems4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 286, -134 )
-
-[node name="Gems5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 339, -134 )
 
 [node name="Gems6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 515, -376 )

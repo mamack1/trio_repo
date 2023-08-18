@@ -102,13 +102,16 @@ func touching_floor():
 func update_animations(input_axis):
 	if input_axis != 0:
 		animated_sprite_2d.flip_h = (input_axis < 0)
-		#$player_sound.play()
-		#yield(get_tree().create_timer(2), "timeout")
+		#$walk_sound.play()
+		#yield(get_tree().create_timer(0.5), "timeout")
 		animated_sprite_2d.play("run")
 	else:
 		animated_sprite_2d.play("idle")		
 	if not is_on_floor():
+		#$jump_sound.play()
+		#yield(get_tree().create_timer(0.5), "timeout")
 		animated_sprite_2d.play("jump")
+
 		
 func _physics_process(delta):
 	get_input(delta)
