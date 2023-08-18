@@ -60,6 +60,9 @@ position = Vector2( -680, -136 )
 [node name="Gem6" parent="." instance=ExtResource( 9 )]
 position = Vector2( 504, -139 )
 
+[node name="Gems8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 102, -178 )
+
 [node name="Gems" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, -133 )
 

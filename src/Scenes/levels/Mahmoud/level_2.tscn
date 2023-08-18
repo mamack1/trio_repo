@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/hazards/spike.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Key.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Gems.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/levels/level_2/StartSign.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/levels/Mahmoud/StartSign.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )

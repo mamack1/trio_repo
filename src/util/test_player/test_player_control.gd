@@ -102,6 +102,8 @@ func touching_floor():
 func update_animations(input_axis):
 	if input_axis != 0:
 		animated_sprite_2d.flip_h = (input_axis < 0)
+		#$player_sound.play()
+		#yield(get_tree().create_timer(2), "timeout")
 		animated_sprite_2d.play("run")
 	else:
 		animated_sprite_2d.play("idle")		

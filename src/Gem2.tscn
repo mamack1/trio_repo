@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Gem2.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprites/monochrome_tilemap.png" type="Texture" id=2]
+[ext_resource path="res://Assets/soundEffects/gem2.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -27,6 +28,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=5]
+radius = 7.07107
 
 [node name="Gem2" type="Area2D"]
 script = ExtResource( 1 )
@@ -38,10 +40,13 @@ __meta__ = {
 modulate = Color( 0.45098, 0.827451, 0.337255, 1 )
 scale = Vector2( 2.58333, 2.18333 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 5 )
+
+[node name="collect_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.483
 
 [connection signal="body_entered" from="." to="." method="_on_Gem2_body_entered"]
