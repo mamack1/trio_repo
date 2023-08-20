@@ -87,7 +87,7 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( -3175, 802 )
+position = Vector2( -4101, 157 )
 
 [node name="spikes" type="Node2D" parent="."]
 
