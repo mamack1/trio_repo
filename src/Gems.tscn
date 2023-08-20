@@ -1,23 +1,23 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/sprites/monochrome_tilemap.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprites/monochrome_tilemap_transparent.png" type="Texture" id=1]
 [ext_resource path="res://Gems.gd" type="Script" id=2]
 [ext_resource path="res://Assets/soundEffects/gem1.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 34, 51, 16, 17 )
+region = Rect2( 34, 51, 15, 17 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 34, 68, 16, 17 )
+region = Rect2( 34, 68, 15, 17 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 34, 85, 16, 17 )
+region = Rect2( 34, 85, 15, 17 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -28,21 +28,25 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 15.0
+radius = 24.3311
 
 [node name="Gems" type="Area2D"]
+position = Vector2( 8, -8 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.341176, 0.337255, 0.721569, 1 )
-position = Vector2( 1, 1.23438 )
-scale = Vector2( 3, 2.44301 )
+modulate = Color( 0.435294, 0.74902, 0.435294, 1 )
+position = Vector2( 24.1609, -24 )
+scale = Vector2( 4.24522, 3.76471 )
 frames = SubResource( 5 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -2 )
+position = Vector2( 24, -28 )
 shape = SubResource( 6 )
 
 [node name="collect_sound" type="AudioStreamPlayer" parent="."]
