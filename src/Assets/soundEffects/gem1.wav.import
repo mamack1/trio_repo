@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/gem1.wav-6bf545a8a269283ccd868099fa565e9c.sample"
+path="res://.import/gem1.wav-2843bec612e5415a1cd3f378f822bac0.sample"
 
 [deps]
 
-source_file="res://assets/soundEffects/gem1.wav"
-dest_files=[ "res://.import/gem1.wav-6bf545a8a269283ccd868099fa565e9c.sample" ]
+source_file="res://Assets/soundEffects/gem1.wav"
+dest_files=[ "res://.import/gem1.wav-2843bec612e5415a1cd3f378f822bac0.sample" ]
 
 [params]
 

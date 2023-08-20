@@ -38,7 +38,7 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.435294, 0.74902, 0.435294, 1 )
+modulate = Color( 0.227451, 0.647059, 0.764706, 1 )
 position = Vector2( 24.1609, -24 )
 scale = Vector2( 4.24522, 3.76471 )
 frames = SubResource( 5 )

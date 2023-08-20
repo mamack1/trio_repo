@@ -38,11 +38,12 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.85098, 0.72549, 0.454902, 1 )
+modulate = Color( 1, 0.843137, 0, 1 )
 position = Vector2( 32.125, -88 )
 scale = Vector2( 3.75, 3.76471 )
 frames = SubResource( 4 )
 animation = "coin"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
