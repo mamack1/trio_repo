@@ -154,4 +154,4 @@ margin_bottom = 600.0
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/quit_button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/credits_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/credits_button" to="." method="_on_credits_button_pressed"]
