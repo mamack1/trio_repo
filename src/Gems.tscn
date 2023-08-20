@@ -28,7 +28,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 16.0312
+radius = 15.0
 
 [node name="Gems" type="Area2D"]
 script = ExtResource( 2 )
@@ -38,7 +38,7 @@ modulate = Color( 0.341176, 0.337255, 0.721569, 1 )
 position = Vector2( 1, 1.23438 )
 scale = Vector2( 3, 2.44301 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -50,4 +50,3 @@ stream = ExtResource( 3 )
 volume_db = -26.601
 
 [connection signal="body_entered" from="." to="." method="_on_Gems_body_entered"]
-[connection signal="child_entered_tree" from="CollisionShape2D" to="." method="_on_CollisionShape2D_child_entered_tree"]

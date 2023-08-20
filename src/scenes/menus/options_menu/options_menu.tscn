@@ -72,8 +72,8 @@ custom_constants/margin_bottom = 25
 [node name="OptionsGrid" type="GridContainer" parent="Options"]
 margin_left = 25.0
 margin_top = 25.0
-margin_right = 999.0
-margin_bottom = 575.0
+margin_right = 1255.0
+margin_bottom = 695.0
 custom_constants/vseparation = 20
 columns = 2
 

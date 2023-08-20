@@ -6,6 +6,6 @@ func _on_Gem2_body_entered(body):
 	if body.name == "KinematicBody2D":
 		get_node("/root/Hud").score += 15
 		$collect_sound.play()
-		yield(get_tree().create_timer(0.5), "timeout")
+		yield(get_tree().create_timer(0.2), "timeout")
 		queue_free()
-pass # Replace with function body.
+		pass # Replace with function body.
