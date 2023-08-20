@@ -15,4 +15,4 @@ func _on_quit_button_pressed():
 
 
 func _on_credits_button_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://scenes/menus/credits_menu/credits.tscn")
