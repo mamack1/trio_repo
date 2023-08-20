@@ -110,8 +110,6 @@ text = "MAIN MENU"
 icon_align = 1
 
 [node name="options_menu" parent="." instance=ExtResource( 3 )]
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/options_button" to="." method="_on_options_button_pressed"]

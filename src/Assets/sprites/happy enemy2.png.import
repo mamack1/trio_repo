@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/happy enemy2.png-71f1079f7b16b282b96f213bc4ac162d.stex"
+path="res://.import/happy enemy2.png-7584c0c6708b5d00254847d0cf0e32b6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/happy enemy2.png"
-dest_files=[ "res://.import/happy enemy2.png-71f1079f7b16b282b96f213bc4ac162d.stex" ]
+source_file="res://Assets/sprites/happy enemy2.png"
+dest_files=[ "res://.import/happy enemy2.png-7584c0c6708b5d00254847d0cf0e32b6.stex" ]
 
 [params]
 

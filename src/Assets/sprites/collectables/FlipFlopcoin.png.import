@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FlipFlopcoin.png-f8f9c3a6ee79d35782971131af8a34d5.stex"
+path="res://.import/FlipFlopcoin.png-00e25d15929b21f01830df71acf79a57.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/collectables/FlipFlopcoin.png"
-dest_files=[ "res://.import/FlipFlopcoin.png-f8f9c3a6ee79d35782971131af8a34d5.stex" ]
+source_file="res://Assets/sprites/collectables/FlipFlopcoin.png"
+dest_files=[ "res://.import/FlipFlopcoin.png-00e25d15929b21f01830df71acf79a57.stex" ]
 
 [params]
 

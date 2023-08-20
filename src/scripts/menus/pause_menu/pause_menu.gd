@@ -22,6 +22,5 @@ func _on_options_button_pressed():
 
 
 func _on_main_button_pressed():
-	set_is_paused(false)
 	get_tree().change_scene('res://scenes/menus/main_manu/Main.tscn')
-	
+	is_paused = false
