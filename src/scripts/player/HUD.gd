@@ -8,6 +8,18 @@ func _process(_delta):
 	get_node("/root/Hud/Display/SCORE").hide()
 	get_node("/root/Hud/Display/HEALTH").hide()
 	
+	if get_tree().current_scene.name == "Level1":
+		get_node("/root/Hud/Display/SCORE").show()
+		get_node("/root/Hud/Display/HEALTH").show()
+		
+	if get_tree().current_scene.name == "level2":
+		get_node("/root/Hud/Display/SCORE").show()
+		get_node("/root/Hud/Display/HEALTH").show()
+		
+	if get_tree().current_scene.name == "test_level":
+		get_node("/root/Hud/Display/SCORE").show()
+		get_node("/root/Hud/Display/HEALTH").show()	
+		
 	if get_tree().current_scene.name == "You Lose Menue":
 		get_node("/root/Hud/Display/SCORE").hide()
 		get_node("/root/Hud/Display/HEALTH").hide()
@@ -16,19 +28,10 @@ func _process(_delta):
 		get_node("/root/Hud/Display/SCORE").hide()
 		get_node("/root/Hud/Display/HEALTH").hide()
 
-
-	if get_tree().current_scene.name == "pause_menu":
+	if get_tree().current_scene.name == " Main":
 		get_node("/root/Hud/Display/SCORE").hide()
 		get_node("/root/Hud/Display/HEALTH").hide()
 
-	if get_tree().current_scene.name == "Level1":
-		get_node("/root/Hud/Display/SCORE").show()
-		get_node("/root/Hud/Display/HEALTH").show()
-		
-	if get_tree().current_scene.name == "test_level":
-		get_node("/root/Hud/Display/SCORE").show()
-		get_node("/root/Hud/Display/HEALTH").show()
-		
 	pass
 
 func set_score(value):

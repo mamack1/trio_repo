@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/sprites/happy enemy1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/smiling-face-with-sunglasses-cool-emoji-png.png" type="Texture" id=2]
 [ext_resource path="res://Assets/soundEffects/win_sound.wav" type="AudioStream" id=3]
-[ext_resource path="res://Assets/sprites/happy enemy2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/sprites/background.png" type="Texture" id=5]
+[ext_resource path="res://Assets/sprites/background/win-background.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/menus/win_menu/You Win Menu.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=9]
@@ -36,7 +35,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 217.046, 459.955 ), Vector2( 217.046, 370.733 ), Vector2( 217.046, 331.038 ), Vector2( 217.046, 525.01 ), Vector2( 217.046, 491.149 ) ]
+"values": [ Vector2( 115.75, 560.25 ), Vector2( 115.75, 591.25 ), Vector2( 115.75, 535.5 ), Vector2( 115.75, 577.75 ), Vector2( 115.75, 417 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -66,75 +65,43 @@ tracks/1/keys = {
 "values": [ Vector2( 135, 529 ) ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "Bounce2"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1014, 508.667 ), Vector2( 1014, 588.667 ), Vector2( 1014, 425.667 ), Vector2( 1014, 490.333 ), Vector2( 1014, 345.5 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1129, 592 ) ]
-}
-
 [node name="You Win Menu" type="Node2D"]
 script = ExtResource( 6 )
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 641, 362.88 )
-scale = Vector2( 10.1111, 5.76 )
+[node name="Win-background" type="Sprite" parent="."]
+position = Vector2( 639, 361.25 )
+scale = Vector2( 0.212667, 0.237833 )
 texture = ExtResource( 5 )
-
-[node name="Title" type="RichTextLabel" parent="."]
-margin_left = 338.0
-margin_top = 164.0
-margin_right = 892.0
-margin_bottom = 278.0
-custom_colors/default_color = Color( 0.0980392, 0.447059, 0.172549, 1 )
-custom_fonts/normal_font = SubResource( 9 )
-text = "YOU WIN!"
 
 [node name="HappyPlayer1" type="Sprite" parent="."]
 position = Vector2( 135, 529 )
+scale = Vector2( 0.278302, 0.277255 )
 texture = ExtResource( 2 )
 
-[node name="HappyPlayer2" type="Sprite" parent="."]
-position = Vector2( 1129, 592 )
-texture = ExtResource( 4 )
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 44.0
+margin_top = 31.0
+margin_right = 598.0
+margin_bottom = 145.0
+custom_colors/default_color = Color( 0.282353, 0.890196, 0.101961, 1 )
+custom_fonts/normal_font = SubResource( 9 )
+text = "YOU WIN!"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 235.0
-margin_top = 304.0
-margin_right = 1010.0
-margin_bottom = 351.0
+margin_left = 114.0
+margin_top = 140.0
+margin_right = 621.0
+margin_bottom = 262.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_fonts/normal_font = SubResource( 2 )
-text = "Click Button to go back to main menu"
+text = "Click Button to go 
+back to main menu"
 
 [node name="Button" type="Button" parent="."]
-margin_left = 309.0
-margin_top = 400.0
-margin_right = 906.0
-margin_bottom = 484.0
+margin_left = 114.0
+margin_top = 230.0
+margin_right = 483.0
+margin_bottom = 314.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 text = "MAIN MENU"
@@ -145,15 +112,9 @@ volume_db = -21.357
 autoplay = true
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
-root_node = NodePath("../HappyEnemy1")
+root_node = NodePath("../HappyPlayer1")
 autoplay = "Bounce"
 anims/Bounce = SubResource( 5 )
 anims/RESET = SubResource( 6 )
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-root_node = NodePath("../HappyEnemy2")
-autoplay = "Bounce2"
-anims/Bounce2 = SubResource( 7 )
-anims/RESET = SubResource( 8 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

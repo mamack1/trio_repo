@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/tile_1.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Coins.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Gems.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Key.tscn" type="PackedScene" id=9]
+[ext_resource path="res://You win.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/sprites/finish.png" type="Texture" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )
@@ -85,6 +87,13 @@ margin_right = 5539.0
 margin_bottom = 3084.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
+
+[node name="Finish" type="Sprite" parent="."]
+position = Vector2( -381, 131 )
+texture = ExtResource( 11 )
+
+[node name="You win" parent="." instance=ExtResource( 10 )]
+position = Vector2( -401, 116 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4101, 157 )
