@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Gem2.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprites/monochrome_tilemap_transparent.png" type="Texture" id=2]
 [ext_resource path="res://Assets/soundEffects/gem2.wav" type="AudioStream" id=3]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 20.3961
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
@@ -27,8 +30,37 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=5]
-radius = 20.3961
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -24, -16 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "bounce"
+length = 0.55
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.55 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -24, -16 ), Vector2( -24, -88 ), Vector2( -24, -56 ) ]
+}
 
 [node name="Gem2" type="Area2D"]
 modulate = Color( 0.988235, 0.352941, 0.588235, 1 )
@@ -38,23 +70,26 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -28, -20 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 5 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 0.466667, 0.596078, 0.729412, 1 )
-position = Vector2( 8.125, 16 )
+position = Vector2( -24, -16 )
 scale = Vector2( 3.75, 3.76471 )
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4, 12 )
-shape = SubResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 9 )
+anims/bounce = SubResource( 10 )
 
 [node name="collect_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -20.483
 
 [connection signal="body_entered" from="." to="." method="_on_Gem2_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

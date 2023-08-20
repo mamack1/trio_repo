@@ -2,5 +2,8 @@ extends "res://scripts/player/HUD.gd"
 
 func _on_Key_body_entered(body):
 	if body.name == "KinematicBody2D":
-		queue_free()
-	pass # Replace with function body.
+		$collect_sound.play()
+		$AnimationPlayer.play("bounce")
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	queue_free()
