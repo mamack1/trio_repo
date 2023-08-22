@@ -6,9 +6,9 @@
 [ext_resource path="res://Assets/sprites/tile_1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/sprites/spikes.png" type="Texture" id=5]
 [ext_resource path="res://scenes/gui/gui.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Gems.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Key.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Coins.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/collectibles/Gems.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/collectibles/Key.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/collectibles/Coins.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )
