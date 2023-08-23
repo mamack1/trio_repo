@@ -3,9 +3,9 @@
 [ext_resource path="res://Assets/sprites/tile_2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/sprites/tile_1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/sprites/spikes.png" type="Texture" id=3]
-[ext_resource path="res://Coins.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Gems.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Key.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/collectibles/Coins.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/collectibles/Gems.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/collectibles/Key.tscn" type="PackedScene" id=6]
 [ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/hazards/spike.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/gui/gui.tscn" type="PackedScene" id=9]
@@ -15,7 +15,7 @@
 [ext_resource path="res://util/test_level/HUD2.gd" type="Script" id=13]
 [ext_resource path="res://Assets/sprites/collectables/gem2.png" type="Texture" id=14]
 [ext_resource path="res://Assets/sprites/collectables/gem1.png" type="Texture" id=15]
-[ext_resource path="res://Gem2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/collectibles/Gem2.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )

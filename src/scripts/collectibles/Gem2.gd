@@ -1,4 +1,4 @@
-extends "res://scripts/player/HUD.gd"
+extends Area2D
 
 signal gem2_collected
 

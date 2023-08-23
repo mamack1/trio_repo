@@ -19,7 +19,7 @@ region = Rect2( 338, 0, 169, 169 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 7 ) ],
 "loop": true,
 "name": "coin",
 "speed": 2.0
@@ -66,11 +66,12 @@ position = Vector2( 28, -91 )
 shape = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 1, 0.843137, 0, 1 )
+modulate = Color( 1, 0.807843, 0, 1 )
 position = Vector2( 32.125, -88 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 4 )
 animation = "coin"
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

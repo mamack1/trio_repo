@@ -24,7 +24,7 @@ region = Rect2( 34, 17, 17, 17 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 7 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -63,7 +63,7 @@ tracks/0/keys = {
 }
 
 [node name="Gem2" type="Area2D"]
-modulate = Color( 0.988235, 0.352941, 0.588235, 1 )
+modulate = Color( 0, 1, 1, 1 )
 position = Vector2( 24, 16 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -75,10 +75,11 @@ position = Vector2( -28, -20 )
 shape = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.466667, 0.596078, 0.729412, 1 )
+modulate = Color( 0, 0.494118, 1, 1 )
 position = Vector2( -24, -16 )
 scale = Vector2( 3.75, 3.76471 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
