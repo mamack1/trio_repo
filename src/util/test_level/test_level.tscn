@@ -118,21 +118,39 @@ position = Vector2( 720, -95 )
 
 [node name="Coins2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 384, -288 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Coins3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 432, -288 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Coins4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 480, -288 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Coins5" parent="." instance=ExtResource( 8 )]
 position = Vector2( 528, -288 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Coins6" parent="." instance=ExtResource( 8 )]
 position = Vector2( 576, -288 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Coins7" parent="." instance=ExtResource( 8 )]
 position = Vector2( 624, -288 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="You win" parent="." instance=ExtResource( 11 )]
 position = Vector2( 860, -357 )

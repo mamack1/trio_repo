@@ -1,33 +1,28 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/collectibles/Coins.gd" type="Script" id=1]
-[ext_resource path="res://Assets/sprites/monochrome_tilemap_transparent.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/new_transparent.png" type="Texture" id=2]
 [ext_resource path="res://Assets/soundEffects/coin.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 19.4165
+radius = 16.5316
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 17, 17 )
+region = Rect2( 169, 0, 169, 169 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 17, 0, 17, 17 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 34, 0, 17, 17 )
+region = Rect2( 338, 0, 169, 169 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "coin",
-"speed": 5.0
+"speed": 2.0
 } ]
 
 [sub_resource type="Animation" id=9]
@@ -63,11 +58,8 @@ tracks/0/keys = {
 }
 
 [node name="Coins" type="Area2D"]
-position = Vector2( -29, 92 )
+position = Vector2( -28.2912, 91.2912 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 28, -91 )
@@ -76,10 +68,9 @@ shape = SubResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 0.843137, 0, 1 )
 position = Vector2( 32.125, -88 )
-scale = Vector2( 3.75, 3.76471 )
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 4 )
 animation = "coin"
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
