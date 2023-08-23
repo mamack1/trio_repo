@@ -1,4 +1,4 @@
-extends "res://scripts/player/HUD.gd"
+extends Area2D
 
 signal coin_collected
 

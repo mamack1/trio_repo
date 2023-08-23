@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/tile_1.png" type="Texture" id=2]
@@ -11,6 +11,13 @@
 [ext_resource path="res://Assets/sprites/brick_tile.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/menus/win_menu/level_end.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/sprites/1bit_assets.png" type="Texture" id=11]
+[ext_resource path="res://Assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=12]
+[ext_resource path="res://util/test_level/HUD2.gd" type="Script" id=13]
+[ext_resource path="res://Assets/sprites/collectables/coin1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/sprites/collectables/gem2.png" type="Texture" id=15]
+[ext_resource path="res://Assets/sprites/collectables/gem1.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/collectibles/Gem2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/collectibles/Coins.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )
@@ -149,6 +156,21 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=5]
 shader = SubResource( 8 )
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.329412, 0.137255, 0.137255, 0.207843 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=13]
+size = 60
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 60
+font_data = ExtResource( 12 )
+
 [node name="Level1" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -164,49 +186,17 @@ position = Vector2( -3809, 110 )
 
 [node name="collectables" type="Node2D" parent="."]
 
+[node name="Coins" parent="collectables" instance=ExtResource( 18 )]
+position = Vector2( -3628, 62 )
+
 [node name="Gems" parent="collectables" instance=ExtResource( 8 )]
 position = Vector2( -3000, 733 )
 
-[node name="Gems2" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -911, 741 )
-
-[node name="Gems6" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -1619, 628 )
-
-[node name="Gems3" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( 289, 799 )
-
-[node name="Gems4" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( 1250, 858 )
-
-[node name="Gems5" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( 46, 685 )
-
-[node name="Gems13" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -3255, 423 )
-
-[node name="Gems14" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -2586, 509 )
-
-[node name="Gems7" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -683, -20 )
-
-[node name="Gems8" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( 48, -817 )
-
-[node name="Gems9" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -1388, -265 )
-
-[node name="Gems10" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -2289, 25 )
-
-[node name="Gems11" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -2910, 79 )
-
-[node name="Gems12" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -3238, 143 )
+[node name="Gem2" parent="collectables" instance=ExtResource( 17 )]
+position = Vector2( -3463, -8 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( -3880, 143 )
 
 [node name="spikes" type="Node2D" parent="."]
@@ -2037,3 +2027,107 @@ scale = Vector2( 23, 23 )
 texture = ExtResource( 4 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 13 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+margin_left = 19.0
+margin_top = 19.0
+margin_right = 356.0
+margin_bottom = 228.0
+custom_styles/panel = SubResource( 12 )
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+modulate = Color( 1, 0.807843, 0, 1 )
+margin_left = 35.0
+margin_top = 27.0
+margin_right = 100.0
+margin_bottom = 91.0
+texture = ExtResource( 14 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="HUD"]
+modulate = Color( 0.227451, 0.647059, 0.764706, 1 )
+margin_left = 35.0
+margin_top = 91.0
+margin_right = 100.0
+margin_bottom = 155.0
+texture = ExtResource( 16 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="HUD"]
+modulate = Color( 0, 0.494118, 1, 1 )
+margin_left = 36.0
+margin_top = 155.0
+margin_right = 101.0
+margin_bottom = 219.0
+texture = ExtResource( 15 )
+expand = true
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 108.0
+margin_top = 27.0
+margin_right = 145.0
+margin_bottom = 90.0
+custom_colors/font_color = Color( 1, 0.807843, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "x"
+valign = 1
+
+[node name="x2" type="Label" parent="HUD"]
+margin_left = 108.0
+margin_top = 91.0
+margin_right = 145.0
+margin_bottom = 152.0
+custom_colors/font_color = Color( 0.227451, 0.647059, 0.764706, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "x"
+valign = 1
+
+[node name="x3" type="Label" parent="HUD"]
+margin_left = 106.0
+margin_top = 155.0
+margin_right = 143.0
+margin_bottom = 218.0
+custom_colors/font_color = Color( 0, 0.494118, 1, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "x"
+valign = 1
+
+[node name="Coins_counter" type="Label" parent="HUD"]
+margin_left = 165.0
+margin_top = 27.0
+margin_right = 307.0
+margin_bottom = 91.0
+custom_colors/font_color = Color( 1, 0.807843, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "##"
+valign = 1
+
+[node name="Gem1_counter" type="Label" parent="HUD"]
+margin_left = 164.0
+margin_top = 91.0
+margin_right = 306.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 0.227451, 0.647059, 0.764706, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "##"
+valign = 1
+
+[node name="Gem2_counter" type="Label" parent="HUD"]
+margin_left = 164.0
+margin_top = 155.0
+margin_right = 306.0
+margin_bottom = 219.0
+custom_colors/font_color = Color( 0, 0.494118, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "##"
+valign = 1
+
+[connection signal="coin_collected" from="collectables/Coins" to="HUD" method="_on_coin_collected"]
+[connection signal="gem1_collected" from="collectables/Gems" to="HUD" method="_on_gem1_collected"]
+[connection signal="gem2_collected" from="collectables/Gem2" to="HUD" method="_on_gem2_collected"]
