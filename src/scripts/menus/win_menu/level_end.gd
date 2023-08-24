@@ -18,6 +18,8 @@ func _on_key_check_body_entered(body):
 	if hud.has_key:
 		$AnimatedSprite.play("open")
 		locked_door = false
+		$open_door.play()
+		
 
 func _physics_process(delta):
 	if is_at_door and hud.has_key:

@@ -62,6 +62,10 @@ shape = SubResource( 8 )
 stream = ExtResource( 1 )
 volume_db = -13.547
 
+[node name="open_door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.731
+
 [connection signal="body_entered" from="." to="." method="_on_level_end_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_level_end_body_exited"]
 [connection signal="body_entered" from="key_check" to="." method="_on_key_check_body_entered"]
