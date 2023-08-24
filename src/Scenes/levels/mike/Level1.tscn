@@ -124,12 +124,16 @@ shader = SubResource( 12 )
 [node name="Level1" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -6519.0
 margin_top = -3911.0
 margin_right = 4838.0
 margin_bottom = 3109.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -3891, 146 )
 
 [node name="collectables" type="Node2D" parent="."]
 
@@ -140,20 +144,17 @@ position = Vector2( 1240, 880 )
 position = Vector2( 1240, 384 )
 
 [node name="diamond4" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( 32, 696 )
+position = Vector2( 42, 698 )
 
 [node name="Key" parent="collectables" instance=ExtResource( 7 )]
-position = Vector2( -3354, 481 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( -1606, 674 )
 hud = NodePath("../../HUD")
 
 [node name="gem_new" parent="collectables" instance=ExtResource( 11 )]
 position = Vector2( -920, 752 )
 
 [node name="gem_new5" parent="collectables" instance=ExtResource( 11 )]
-position = Vector2( 288, 808 )
+position = Vector2( 282, 808 )
 
 [node name="gem_new2" parent="collectables" instance=ExtResource( 11 )]
 position = Vector2( -2680, 448 )
@@ -168,10 +169,10 @@ position = Vector2( 41, -820 )
 position = Vector2( 785, 78 )
 
 [node name="coin_new2" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( 391, -1 )
+position = Vector2( 392, 14 )
 
 [node name="coin_new3" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( -281, 138 )
+position = Vector2( -282, 142 )
 
 [node name="coin_new4" parent="collectables" instance=ExtResource( 9 )]
 position = Vector2( -1103, 357 )
@@ -183,13 +184,13 @@ position = Vector2( -2117, 576 )
 position = Vector2( -3171, 439 )
 
 [node name="coin_new7" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( -1638, -83 )
+position = Vector2( -1638, -98 )
 
 [node name="coin_new8" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( -2360, 87 )
+position = Vector2( -2362, 78 )
 
 [node name="coin_new9" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( -3000, 148 )
+position = Vector2( -3000, 142 )
 
 [node name="coin_new10" parent="collectables" instance=ExtResource( 9 )]
 position = Vector2( 40, -312 )
@@ -213,13 +214,13 @@ position = Vector2( 40, -512 )
 position = Vector2( 40, -384 )
 
 [node name="coin_new11" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( 32, 456 )
+position = Vector2( 40, 448 )
 
 [node name="coin_new23" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( 920, 928 )
+position = Vector2( 928, 926 )
 
 [node name="coin_new18" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( 1240, 208 )
+position = Vector2( 1240, 206 )
 
 [node name="coin_new19" parent="collectables" instance=ExtResource( 9 )]
 position = Vector2( 1080, 576 )
@@ -228,13 +229,10 @@ position = Vector2( 1080, 576 )
 position = Vector2( 400, 576 )
 
 [node name="coin_new21" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( 40, 568 )
+position = Vector2( 40, 572 )
 
 [node name="coin_new22" parent="collectables" instance=ExtResource( 9 )]
-position = Vector2( -3568, 128 )
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( -3438, 440 )
+position = Vector2( -3566, 142 )
 
 [node name="spikes" type="Node2D" parent="."]
 
@@ -2071,6 +2069,7 @@ modulate = Color( 1, 0.843137, 0, 1 )
 position = Vector2( 70, 60 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 17 )
+frame = 1
 playing = true
 
 [node name="diamond" type="AnimatedSprite" parent="HUD"]
@@ -2078,6 +2077,7 @@ modulate = Color( 0.101961, 1, 0.976471, 1 )
 position = Vector2( 70, 121 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 22 )
+frame = 1
 playing = true
 
 [node name="gem" type="AnimatedSprite" parent="HUD"]
@@ -2085,7 +2085,7 @@ modulate = Color( 1, 0, 0.423529, 1 )
 position = Vector2( 71, 191 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 26 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="x" type="Label" parent="HUD"]
@@ -2161,7 +2161,6 @@ modulate = Color( 1, 0.682353, 0, 1 )
 position = Vector2( 136, 231 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 30 )
-frame = 1
 playing = true
 
 [node name="level_end" parent="." instance=ExtResource( 10 )]

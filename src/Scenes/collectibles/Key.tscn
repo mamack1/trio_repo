@@ -59,8 +59,12 @@ tracks/0/keys = {
 
 [node name="Key" type="Area2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -28, -34 )
 shape = SubResource( 3 )
 
@@ -70,6 +74,7 @@ position = Vector2( -29.95, -33.8884 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
 animation = "Key"
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
