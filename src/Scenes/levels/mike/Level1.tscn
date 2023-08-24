@@ -115,6 +115,7 @@ position = Vector2( -3573, 140 )
 position = Vector2( -3675, 102 )
 
 [node name="new_coin" parent="collectables" instance=ExtResource( 9 )]
+modulate = Color( 1, 1, 1, 1 )
 position = Vector2( -3771, 58 )
 
 [node name="new_gem" parent="collectables" instance=ExtResource( 11 )]
@@ -1971,7 +1972,7 @@ frame = 1
 playing = true
 
 [node name="diamond" type="AnimatedSprite" parent="HUD"]
-modulate = Color( 0.54902, 0.00392157, 1, 1 )
+modulate = Color( 0.101961, 1, 0.976471, 1 )
 position = Vector2( 70, 121 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 22 )
@@ -1979,11 +1980,10 @@ frame = 1
 playing = true
 
 [node name="gem" type="AnimatedSprite" parent="HUD"]
-modulate = Color( 0, 1, 0.298039, 1 )
+modulate = Color( 1, 0, 0.423529, 1 )
 position = Vector2( 71, 191 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 26 )
-frame = 1
 playing = true
 
 [node name="x" type="Label" parent="HUD"]
@@ -1997,7 +1997,7 @@ text = "x"
 valign = 1
 
 [node name="x2" type="Label" parent="HUD"]
-modulate = Color( 0.54902, 0.00392157, 1, 1 )
+modulate = Color( 0.101961, 1, 0.976471, 1 )
 margin_left = 108.0
 margin_top = 91.0
 margin_right = 145.0
@@ -2008,12 +2008,12 @@ text = "x"
 valign = 1
 
 [node name="x3" type="Label" parent="HUD"]
-modulate = Color( 0, 1, 0.298039, 1 )
+modulate = Color( 1, 0, 0.423529, 1 )
 margin_left = 106.0
 margin_top = 155.0
 margin_right = 143.0
 margin_bottom = 218.0
-custom_colors/font_color = Color( 0, 0.494118, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 13 )
 text = "x"
 valign = 1
@@ -2030,7 +2030,7 @@ text = "##"
 valign = 1
 
 [node name="Diamond_counter" type="Label" parent="HUD"]
-modulate = Color( 0.54902, 0.00392157, 1, 1 )
+modulate = Color( 0.101961, 1, 0.976471, 1 )
 margin_left = 164.0
 margin_top = 91.0
 margin_right = 306.0
@@ -2042,12 +2042,12 @@ text = "##"
 valign = 1
 
 [node name="Gem_counter" type="Label" parent="HUD"]
-modulate = Color( 0, 1, 0.298039, 1 )
+modulate = Color( 1, 0, 0.423529, 1 )
 margin_left = 164.0
 margin_top = 155.0
 margin_right = 306.0
 margin_bottom = 219.0
-custom_colors/font_color = Color( 0, 0.494118, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 14 )
 text = "##"
