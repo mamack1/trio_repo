@@ -32,13 +32,17 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 180, 88 )
+extents = Vector2( 276, 88 )
 
 [node name="level_end" type="Area2D"]
 position = Vector2( -53, 42 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 73, -26.75 )
 shape = SubResource( 1 )
 
@@ -55,7 +59,8 @@ animation = "locked"
 [node name="key_check" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key_check"]
-position = Vector2( 193, -82 )
+visible = false
+position = Vector2( 289, -82 )
 shape = SubResource( 8 )
 
 [node name="door_locked" type="AudioStreamPlayer" parent="."]
