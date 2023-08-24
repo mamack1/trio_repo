@@ -2,7 +2,7 @@ extends Area2D
 
 signal coin_collected
 
-func _on_Coins_body_entered(body):
+func _on_coin_body_entered(body):
 	if body.name == "KinematicBody2D":
 		#get_node("/root/Hud").score += 1
 		$collect_sound.play()

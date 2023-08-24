@@ -1,22 +1,23 @@
 extends CanvasLayer
 
-var coins = 0
-var gem1 = 0
-var gem2 = 0
+var coin = 0
+var diamond = 0
+var gem = 0
 
 func _ready():
-	$Coins_counter.text = str(coins)
-	$Gem1_counter.text = str(gem1)
-	$Gem2_counter.text = str(gem2)
+	$Coin_counter.text = str(coin)
+	$Diamond_counter.text = str(diamond)
+	$Gem_counter.text = str(gem)
 
-func _on_coin_collected():
-	coins += 1
+
+func _on_diamond_diamond_collected():
+	diamond += 1
 	_ready()
 
-func _on_gem1_collected():
-	gem1 += 1
+func _on_new_coin_coin_collected():
+	coin += 1
 	_ready()
 
-func _on_gem2_collected():
-	gem2 += 1
+func _on_new_gem_gem_collected():
+	gem += 1
 	_ready()

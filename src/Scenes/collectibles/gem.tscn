@@ -1,34 +1,43 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://scripts/collectibles/Gem2.gd" type="Script" id=1]
-[ext_resource path="res://Assets/sprites/monochrome_tilemap_transparent.png" type="Texture" id=2]
+[ext_resource path="res://scripts/collectibles/gem.gd" type="Script" id=1]
+[ext_resource path="res://Assets/sprites/new_transparent.png" type="Texture" id=2]
 [ext_resource path="res://Assets/audio/sounds_effects/gem2.wav" type="AudioStream" id=3]
 
-
 [sub_resource type="CircleShape2D" id=5]
-radius = 20.3961
+radius = 17.0294
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 17, 17, 17 )
+region = Rect2( 0, 169, 169, 169 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 17, 17, 17, 17 )
+region = Rect2( 169, 169, 169, 169 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 34, 17, 17, 17 )
+region = Rect2( 338, 169, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 169, 169, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 169, 169, 169 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 7 ), SubResource( 6 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="Animation" id=9]
@@ -60,27 +69,25 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.55 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -24, -16 ), Vector2( -24, -88 ), Vector2( -24, -56 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, -20 ), Vector2( 0, 0 ) ]
 }
 
-[node name="Gem2" type="Area2D"]
+[node name="gem" type="Area2D"]
 modulate = Color( 0, 1, 1, 1 )
-position = Vector2( 24, 16 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -28, -20 )
 shape = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 0, 0.494118, 1, 1 )
 position = Vector2( -24, -16 )
-scale = Vector2( 3.75, 3.76471 )
+scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,40 +1,34 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/collectibles/Coins.gd" type="Script" id=1]
-[ext_resource path="res://Assets/sprites/monochrome_tilemap_transparent.png" type="Texture" id=2]
+[ext_resource path="res://scripts/collectibles/coin.gd" type="Script" id=1]
+[ext_resource path="res://Assets/sprites/new_transparent.png" type="Texture" id=2]
 [ext_resource path="res://Assets/audio/sounds_effects/coin.wav" type="AudioStream" id=3]
 
-
 [sub_resource type="CircleShape2D" id=5]
-radius = 19.4165
+radius = 18.0
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 17, 17 )
+region = Rect2( 169, 0, 169, 169 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 17, 0, 17, 17 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 34, 0, 17, 17 )
+region = Rect2( 338, 0, 169, 169 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "coin",
-"speed": 5.0
+"speed": 2.0
 } ]
 
 [sub_resource type="Animation" id=9]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/path = NodePath("coin_sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -51,7 +45,7 @@ resource_name = "bounce"
 length = 0.55
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/path = NodePath("coin_sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -60,26 +54,22 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.55 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 32.125, -88 ), Vector2( 32.125, -164 ), Vector2( 32.125, -126.087 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, -20 ), Vector2( 0, 0 ) ]
 }
 
-[node name="Coins" type="Area2D"]
-position = Vector2( -29, 92 )
+[node name="coin" type="Area2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 28, -91 )
 shape = SubResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="coin_sprite" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 0.843137, 0, 1 )
 position = Vector2( 32.125, -88 )
-scale = Vector2( 3.75, 3.76471 )
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 4 )
 animation = "coin"
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -90,5 +80,5 @@ anims/bounce = SubResource( 10 )
 stream = ExtResource( 3 )
 volume_db = -19.608
 
-[connection signal="body_entered" from="." to="." method="_on_Coins_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

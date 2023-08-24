@@ -1,19 +1,18 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/levels/mike/Level1_tilemap.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/hazards/spike.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/sprites/spikes.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sprites/new_transparent.png" type="Texture" id=5]
 [ext_resource path="res://scenes/gui/gui.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/collectibles/Gems.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/collectibles/Key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/collectibles/diamond.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/collectibles/coin_new.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/menus/win_menu/level_end.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/collectibles/gem_new.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=12]
 [ext_resource path="res://util/test_level/HUD2.gd" type="Script" id=13]
-[ext_resource path="res://Assets/sprites/collectables/coin1.png" type="Texture" id=14]
-[ext_resource path="res://Assets/sprites/collectables/gem2.png" type="Texture" id=15]
-[ext_resource path="res://Assets/sprites/collectables/gem1.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/collectibles/Gem2.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/collectibles/Coins.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Shader" id=12]
 code = "shader_type canvas_item;
@@ -30,6 +29,65 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=5]
 shader = SubResource( 12 )
 
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 169, 0, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 338, 0, 169, 169 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 338, 507, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 338, 676, 169, 169 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 169, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 169, 169, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 338, 169, 169, 169 )
+
+[sub_resource type="SpriteFrames" id=26]
+animations = [ {
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
 [sub_resource type="DynamicFont" id=13]
 size = 60
 font_data = ExtResource( 12 )
@@ -41,29 +99,32 @@ font_data = ExtResource( 12 )
 [node name="Level1" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -6271.0
-margin_top = -4009.0
-margin_right = 5086.0
-margin_bottom = 3011.0
+margin_left = -6301.0
+margin_top = -3919.0
+margin_right = 5056.0
+margin_bottom = 3101.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="collectables" type="Node2D" parent="."]
 
-[node name="Coins" parent="collectables" instance=ExtResource( 18 )]
-position = Vector2( -3628, 62 )
+[node name="diamond" parent="collectables" instance=ExtResource( 8 )]
+position = Vector2( -3573, 140 )
 
-[node name="Gems" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -3000, 733 )
+[node name="Key" parent="collectables" instance=ExtResource( 7 )]
+position = Vector2( -3675, 102 )
 
-[node name="Gem2" parent="collectables" instance=ExtResource( 17 )]
-position = Vector2( -3463, -8 )
+[node name="new_coin" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( -3771, 58 )
+
+[node name="new_gem" parent="collectables" instance=ExtResource( 11 )]
+position = Vector2( -3521, 84 )
 
 [node name="level_end" parent="." instance=ExtResource( 10 )]
 position = Vector2( -3927, 475 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( -3796, 147 )
+position = Vector2( -3758, 145 )
 
 [node name="spikes" type="Node2D" parent="."]
 
@@ -1889,6 +1950,7 @@ scale = Vector2( 23, 23 )
 texture = ExtResource( 4 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 13 )
@@ -1900,32 +1962,29 @@ margin_top = 19.0
 margin_right = 356.0
 margin_bottom = 228.0
 
-[node name="TextureRect" type="TextureRect" parent="HUD"]
-modulate = Color( 1, 0.807843, 0, 1 )
-margin_left = 35.0
-margin_top = 27.0
-margin_right = 100.0
-margin_bottom = 91.0
-texture = ExtResource( 14 )
-expand = true
+[node name="coin" type="AnimatedSprite" parent="HUD"]
+modulate = Color( 1, 0.843137, 0, 1 )
+position = Vector2( 70, 60 )
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 17 )
+frame = 1
+playing = true
 
-[node name="TextureRect2" type="TextureRect" parent="HUD"]
-modulate = Color( 0.227451, 0.647059, 0.764706, 1 )
-margin_left = 35.0
-margin_top = 91.0
-margin_right = 100.0
-margin_bottom = 155.0
-texture = ExtResource( 16 )
-expand = true
+[node name="diamond" type="AnimatedSprite" parent="HUD"]
+modulate = Color( 0.54902, 0.00392157, 1, 1 )
+position = Vector2( 70, 121 )
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 22 )
+frame = 1
+playing = true
 
-[node name="TextureRect3" type="TextureRect" parent="HUD"]
-modulate = Color( 0, 0.494118, 1, 1 )
-margin_left = 36.0
-margin_top = 155.0
-margin_right = 101.0
-margin_bottom = 219.0
-texture = ExtResource( 15 )
-expand = true
+[node name="gem" type="AnimatedSprite" parent="HUD"]
+modulate = Color( 0, 1, 0.298039, 1 )
+position = Vector2( 71, 191 )
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 26 )
+frame = 1
+playing = true
 
 [node name="x" type="Label" parent="HUD"]
 margin_left = 108.0
@@ -1938,6 +1997,7 @@ text = "x"
 valign = 1
 
 [node name="x2" type="Label" parent="HUD"]
+modulate = Color( 0.54902, 0.00392157, 1, 1 )
 margin_left = 108.0
 margin_top = 91.0
 margin_right = 145.0
@@ -1948,6 +2008,7 @@ text = "x"
 valign = 1
 
 [node name="x3" type="Label" parent="HUD"]
+modulate = Color( 0, 1, 0.298039, 1 )
 margin_left = 106.0
 margin_top = 155.0
 margin_right = 143.0
@@ -1957,7 +2018,7 @@ custom_fonts/font = SubResource( 13 )
 text = "x"
 valign = 1
 
-[node name="Coins_counter" type="Label" parent="HUD"]
+[node name="Coin_counter" type="Label" parent="HUD"]
 margin_left = 165.0
 margin_top = 27.0
 margin_right = 307.0
@@ -1968,7 +2029,8 @@ custom_fonts/font = SubResource( 14 )
 text = "##"
 valign = 1
 
-[node name="Gem1_counter" type="Label" parent="HUD"]
+[node name="Diamond_counter" type="Label" parent="HUD"]
+modulate = Color( 0.54902, 0.00392157, 1, 1 )
 margin_left = 164.0
 margin_top = 91.0
 margin_right = 306.0
@@ -1979,7 +2041,8 @@ custom_fonts/font = SubResource( 14 )
 text = "##"
 valign = 1
 
-[node name="Gem2_counter" type="Label" parent="HUD"]
+[node name="Gem_counter" type="Label" parent="HUD"]
+modulate = Color( 0, 1, 0.298039, 1 )
 margin_left = 164.0
 margin_top = 155.0
 margin_right = 306.0
@@ -1990,6 +2053,6 @@ custom_fonts/font = SubResource( 14 )
 text = "##"
 valign = 1
 
-[connection signal="coin_collected" from="collectables/Coins" to="HUD" method="_on_coin_collected"]
-[connection signal="gem1_collected" from="collectables/Gems" to="HUD" method="_on_gem1_collected"]
-[connection signal="gem2_collected" from="collectables/Gem2" to="HUD" method="_on_gem2_collected"]
+[connection signal="diamond_collected" from="collectables/diamond" to="HUD" method="_on_diamond_diamond_collected"]
+[connection signal="coin_collected" from="collectables/new_coin" to="HUD" method="_on_new_coin_coin_collected"]
+[connection signal="gem_collected" from="collectables/new_gem" to="HUD" method="_on_new_gem_gem_collected"]

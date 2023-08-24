@@ -1,29 +1,28 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/sprites/monochrome_tilemap_transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprites/new_transparent.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player/Key.gd" type="Script" id=2]
 [ext_resource path="res://Assets/audio/sounds_effects/coin.wav" type="AudioStream" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 24, 8.5 )
+extents = Vector2( 12, 8.5 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 256, 65, 16, 13 )
+region = Rect2( 2704, 676, 169, 169 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 272, 65, 16, 13 )
+region = Rect2( 2873, 676, 169, 169 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "Key",
-"speed": 5.0
+"speed": 1.0
 } ]
 
 [sub_resource type="Animation" id=6]
@@ -59,23 +58,22 @@ tracks/0/keys = {
 }
 
 [node name="Key" type="Area2D"]
-position = Vector2( 30, 34 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -30, -33.5 )
+visible = false
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 0.839216, 0.690196, 0.372549, 1 )
 self_modulate = Color( 0.921569, 0.831373, 0.0784314, 1 )
-position = Vector2( -29.95, -33.8884 )
-scale = Vector2( 3.99375, 2.4787 )
+scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
 animation = "Key"
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
