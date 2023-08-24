@@ -65,13 +65,11 @@ position = Vector2( -28, -34 )
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.839216, 0.690196, 0.372549, 1 )
-self_modulate = Color( 0.921569, 0.831373, 0.0784314, 1 )
+modulate = Color( 1, 0.682353, 0, 1 )
 position = Vector2( -29.95, -33.8884 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
 animation = "Key"
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

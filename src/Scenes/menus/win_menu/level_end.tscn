@@ -1,31 +1,67 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/sprites/new_tiles_mike.png" type="Texture" id=1]
+[ext_resource path="res://Assets/audio/sounds_effects/8bit-pickup.wav" type="AudioStream" id=1]
 [ext_resource path="res://scripts/menus/win_menu/level_end.gd" type="Script" id=2]
 [ext_resource path="res://Assets/audio/sounds_effects/small_win.wav" type="AudioStream" id=3]
-
+[ext_resource path="res://Assets/sprites/new_transparent.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 43, 51.75 )
+extents = Vector2( 12, 31.25 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2704, 338, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 3042, 338, 169, 169 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "locked",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 180, 88 )
 
 [node name="level_end" type="Area2D"]
 position = Vector2( -53, 42 )
 script = ExtResource( 2 )
 
-[node name="exit_door" type="Sprite" parent="."]
-position = Vector2( 40, -30 )
-scale = Vector2( 0.625514, 0.658436 )
-texture = ExtResource( 1 )
-hframes = 21
-vframes = 21
-frame = 357
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 63, -47.25 )
+position = Vector2( 73, -26.75 )
 shape = SubResource( 1 )
 
 [node name="win_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -26.601
 
-[connection signal="body_entered" from="." to="." method="_on_You_win_body_entered"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 61, -50 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 5 )
+animation = "locked"
+
+[node name="key_check" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key_check"]
+position = Vector2( 193, -82 )
+shape = SubResource( 8 )
+
+[node name="door_locked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -13.547
+
+[connection signal="body_entered" from="." to="." method="_on_level_end_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_level_end_body_exited"]
+[connection signal="body_entered" from="key_check" to="." method="_on_key_check_body_entered"]

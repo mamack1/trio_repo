@@ -6,7 +6,6 @@
 [ext_resource path="res://Assets/sprites/smiling-face-with-sunglasses-cool-emoji-png.png" type="Texture" id=4]
 [ext_resource path="res://Assets/sprites/background/win-background.png" type="Texture" id=5]
 
-
 [sub_resource type="DynamicFont" id=9]
 size = 120
 font_data = ExtResource( 3 )
