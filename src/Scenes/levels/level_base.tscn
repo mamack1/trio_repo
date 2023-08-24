@@ -213,7 +213,6 @@ modulate = Color( 1, 0.843137, 0, 1 )
 position = Vector2( 70, 60 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 31 )
-frame = 1
 playing = true
 
 [node name="diamond" type="AnimatedSprite" parent="HUD"]
@@ -221,7 +220,6 @@ modulate = Color( 0.101961, 1, 0.976471, 1 )
 position = Vector2( 70, 121 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 32 )
-frame = 1
 playing = true
 
 [node name="gem" type="AnimatedSprite" parent="HUD"]
@@ -229,6 +227,7 @@ modulate = Color( 1, 0, 0.423529, 1 )
 position = Vector2( 71, 191 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 33 )
+frame = 1
 playing = true
 
 [node name="x" type="Label" parent="HUD"]
@@ -304,7 +303,6 @@ modulate = Color( 1, 0.682353, 0, 1 )
 position = Vector2( 136, 231 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 
 [connection signal="coin_collected" from="collectables/coin_new" to="HUD" method="_on_coin_collected"]
