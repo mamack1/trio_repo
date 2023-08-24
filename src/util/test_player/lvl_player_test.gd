@@ -104,16 +104,11 @@ func update_animations(input_axis):
 			animated_sprite_2d.flip_h = (input_axis < 0)
 			animated_sprite_2d.play("run")
 		else:
-			animated_sprite_2d.play("idle")		
-		if not is_on_floor():
-			if animated_sprite_2d.flip_v :
-				animated_sprite_2d.play("idle")
-				if input_axis != 0:
-					animated_sprite_2d.flip_h = (input_axis < 0)
-					animated_sprite_2d.play("run")
-			else:
-				animated_sprite_2d.play("jump")
-		
+			animated_sprite_2d.play("idle")
+			
+		if not is_on_floor() and not is_on_ceiling():
+			animated_sprite_2d.play("jump")
+
 func _physics_process(delta):
 	get_input(delta)
 	

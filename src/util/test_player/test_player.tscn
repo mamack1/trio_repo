@@ -5,7 +5,6 @@
 [ext_resource path="res://Assets/audio/sounds_effects/jump.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/audio/sounds_effects/footsteps.wav" type="AudioStream" id=4]
 
-
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 2 )
@@ -85,6 +84,7 @@ position = Vector2( 2, -1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 14 )
 animation = "invert_run"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
