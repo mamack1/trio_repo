@@ -1,10 +1,11 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/menus/win_menu/win_scene.gd" type="Script" id=1]
-[ext_resource path="res://Assets/soundEffects/win_sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/audio/sounds_effects/win_sound.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/sprites/smiling-face-with-sunglasses-cool-emoji-png.png" type="Texture" id=4]
 [ext_resource path="res://Assets/sprites/background/win-background.png" type="Texture" id=5]
+
 
 [sub_resource type="DynamicFont" id=9]
 size = 120

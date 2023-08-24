@@ -1,11 +1,12 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Assets/soundEffects/game-over.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/audio/sounds_effects/game-over.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/sprites/background.png" type="Texture" id=2]
 [ext_resource path="res://Assets/sprites/happy enemy1.png" type="Texture" id=3]
 [ext_resource path="res://scripts/menus/lose_menu/lose_menu.gd" type="Script" id=4]
 [ext_resource path="res://Assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/sprites/happy enemy2.png" type="Texture" id=6]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
