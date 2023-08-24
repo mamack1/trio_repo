@@ -1,16 +1,12 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/sprites/tile_1.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/levels/mike/Level1_tilemap.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/hazards/spike.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/sprites/spikes.png" type="Texture" id=4]
-[ext_resource path="res://Assets/sprites/tile_2.png" type="Texture" id=5]
 [ext_resource path="res://scenes/gui/gui.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/sprites/brick.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/collectibles/Gems.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/sprites/brick_tile.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/menus/win_menu/level_end.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/sprites/1bit_assets.png" type="Texture" id=11]
 [ext_resource path="res://Assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=12]
 [ext_resource path="res://util/test_level/HUD2.gd" type="Script" id=13]
 [ext_resource path="res://Assets/sprites/collectables/coin1.png" type="Texture" id=14]
@@ -18,128 +14,6 @@
 [ext_resource path="res://Assets/sprites/collectables/gem1.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/collectibles/Gem2.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/collectibles/Coins.tscn" type="PackedScene" id=18]
-
-[sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 88, 20, 0, 20, 0, 0, 88, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 240, 20, 0, 20, 0, 0, 240, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=10]
-points = PoolVector2Array( 1600, 45, 8, 45, 0, 0, 1600, 5 )
-
-[sub_resource type="ConvexPolygonShape2D" id=11]
-points = PoolVector2Array( 80, 60, 0, 60, 0, 0, 80, 0 )
-
-[sub_resource type="TileSet" id=1]
-0/name = "tile_1.png 0"
-0/texture = ExtResource( 2 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 216, 280, 88, 60 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 6 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 6 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-1/name = "tile_2.png 1"
-1/texture = ExtResource( 5 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 216, 280, 88, 60 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 7 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 7 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
-2/name = "1bit_assets.png 2"
-2/texture = ExtResource( 11 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 80, 0, 240, 240 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 9 )
-2/shape_one_way = false
-2/shape_one_way_margin = 1.0
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 9 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-2/z_index = 0
-3/name = "brick_tile.png 3"
-3/texture = ExtResource( 9 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 5600, 5800, 1600, 1200 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 10 )
-3/shape_one_way = false
-3/shape_one_way_margin = 1.0
-3/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 10 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-3/z_index = 0
-4/name = "brick.png 4"
-4/texture = ExtResource( 7 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 280, 290, 80, 60 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 0, 0 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape = SubResource( 11 )
-4/shape_one_way = false
-4/shape_one_way_margin = 1.0
-4/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 11 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-4/z_index = 0
 
 [sub_resource type="Shader" id=12]
 code = "shader_type canvas_item;
@@ -2001,7 +1875,7 @@ position = Vector2( 1040, -120 )
 rotation = 3.14159
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 80, 60 )
 show_collision = true
 centered_textures = true
@@ -2020,6 +1894,7 @@ texture = ExtResource( 4 )
 script = ExtResource( 13 )
 
 [node name="Panel" type="Panel" parent="HUD"]
+visible = false
 margin_left = 19.0
 margin_top = 19.0
 margin_right = 356.0

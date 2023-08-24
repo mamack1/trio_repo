@@ -121,11 +121,11 @@ func _on_hazardDetect_area_entered(_area):
 	
 
 func _on_player_reset_timeout():
-	velocity.y = 0
-	is_dead = false
-	global_position = starting_position
-	animated_sprite_2d.flip_v = false
-	inverter.hide()
-	death_timer.stop()
-	animated_sprite_2d.show()
-	
+#	velocity.y = 0
+#	is_dead = false
+#	global_position = starting_position
+#	animated_sprite_2d.flip_v = false
+#	inverter.hide()
+#	death_timer.stop()
+#	animated_sprite_2d.show()
+	get_tree(). reload_current_scene()
