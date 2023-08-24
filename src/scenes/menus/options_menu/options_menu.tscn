@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://scripts/menus/options_menu/OptionsMenu.gd" type="Script" id=2]
+[ext_resource path="res://scripts/menus/options_menu/options_menu.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -47,11 +47,9 @@ border_width_bottom = 5
 border_color = Color( 1, 1, 1, 1 )
 shadow_size = 1
 
-[node name="options_menu" type="Popup"]
+[node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 1024, 600 )
-popup_exclusive = true
 script = ExtResource( 2 )
 
 [node name="Background" type="ColorRect" parent="."]
@@ -88,8 +86,8 @@ text = "FULLSCREEN"
 uppercase = true
 
 [node name="full_button" type="CheckButton" parent="Options/OptionsGrid"]
-margin_left = 898.0
-margin_right = 974.0
+margin_left = 1154.0
+margin_right = 1230.0
 margin_bottom = 40.0
 size_flags_horizontal = 10
 
@@ -105,16 +103,16 @@ text = "MASTER"
 uppercase = true
 
 [node name="master_slider" type="HSlider" parent="Options/OptionsGrid"]
-margin_left = 574.0
+margin_left = 830.0
 margin_top = 60.0
-margin_right = 974.0
+margin_right = 1230.0
 margin_bottom = 76.0
 rect_min_size = Vector2( 400, 0 )
 size_flags_horizontal = 10
 min_value = -50.0
-max_value = 0.0
+max_value = -5.0
 step = 5.0
-value = -10.0
+value = -5.0
 scrollable = false
 
 [node name="sfx" type="Label" parent="Options/OptionsGrid"]
@@ -128,16 +126,16 @@ text = "SOUND EFFECTS"
 uppercase = true
 
 [node name="sfx_slider" type="HSlider" parent="Options/OptionsGrid"]
-margin_left = 574.0
+margin_left = 830.0
 margin_top = 100.0
-margin_right = 974.0
+margin_right = 1230.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 400, 0 )
 size_flags_horizontal = 10
 min_value = -50.0
-max_value = 0.0
+max_value = -5.0
 step = 5.0
-value = -10.0
+value = -5.0
 scrollable = false
 
 [node name="music" type="Label" parent="Options/OptionsGrid"]
@@ -151,14 +149,14 @@ text = "MUSIC"
 uppercase = true
 
 [node name="music_slider" type="HSlider" parent="Options/OptionsGrid"]
-margin_left = 574.0
+margin_left = 830.0
 margin_top = 140.0
-margin_right = 974.0
+margin_right = 1230.0
 margin_bottom = 156.0
 rect_min_size = Vector2( 400, 0 )
 size_flags_horizontal = 10
 min_value = -50.0
-max_value = 0.0
+max_value = -5.0
 step = 5.0
 value = -10.0
 scrollable = false
@@ -179,9 +177,8 @@ custom_styles/normal = SubResource( 8 )
 text = "BACK"
 icon_align = 1
 
-[connection signal="toggled" from="Options/OptionsGrid/full_button" to="." method="_on_FCButton_toggled"]
-[connection signal="value_changed" from="Options/OptionsGrid/master_slider" to="." method="_on_MasterSlider_value_changed"]
-[connection signal="value_changed" from="Options/OptionsGrid/sfx_slider" to="." method="_on_SfxSlider_value_changed"]
-[connection signal="changed" from="Options/OptionsGrid/music_slider" to="." method="_on_MusicSlider_changed"]
-[connection signal="value_changed" from="Options/OptionsGrid/music_slider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="toggled" from="Options/OptionsGrid/full_button" to="." method="_on_full_button_toggled"]
+[connection signal="value_changed" from="Options/OptionsGrid/master_slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Options/OptionsGrid/sfx_slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Options/OptionsGrid/music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="Options/OptionsGrid/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]

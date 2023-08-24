@@ -74,7 +74,6 @@ position = Vector2( -29.95, -33.8884 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
 animation = "Key"
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -83,7 +82,7 @@ anims/bounce = SubResource( 7 )
 
 [node name="collect_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -19.608
+bus = "SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_Key_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

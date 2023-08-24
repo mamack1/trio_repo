@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/menus/main_menu/Main.gd" type="Script" id=2]
-[ext_resource path="res://scenes/menus/options_menu/options_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/menus/options_menu/options_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/styles/black_pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://assets/styles/black_normal.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/styles/black_hover.tres" type="StyleBox" id=6]
 [ext_resource path="res://assets/styles/white_normal.tres" type="StyleBox" id=7]
 [ext_resource path="res://assets/styles/white_pressed.tres" type="StyleBox" id=8]
 [ext_resource path="res://assets/styles/white_hover.tres" type="StyleBox" id=9]
+[ext_resource path="res://Assets/audio/music/Cyborg Ninja.mp3" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 61
@@ -145,11 +146,13 @@ custom_styles/normal = ExtResource( 7 )
 text = "CREDITS"
 icon_align = 1
 
-[node name="OptionsMenu" parent="." instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+bus = "Music"
+
+[node name="options_menu" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/options_button" to="." method="_on_options_button_pressed"]

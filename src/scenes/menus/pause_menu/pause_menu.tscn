@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/menus/pause_menu/pause_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=2]
-[ext_resource path="res://scenes/menus/options_menu/options_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/menus/options_menu/options_menu.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 61
@@ -110,8 +110,7 @@ text = "MAIN MENU"
 icon_align = 1
 
 [node name="options_menu" parent="." instance=ExtResource( 3 )]
-grow_horizontal = 2
-grow_vertical = 2
+visible = false
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/options_button" to="." method="_on_options_button_pressed"]

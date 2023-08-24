@@ -6,7 +6,7 @@ var is_paused = false setget set_is_paused
 
 func _unhandled_input(event):
 	if event.is_action_pressed('pause'):
-		self.is_paused = !is_paused
+		self.is_paused = true
 
 func set_is_paused(value):
 	is_paused = value
@@ -18,7 +18,7 @@ func _on_resume_button_pressed():
 
 
 func _on_options_button_pressed():
-	options_menu.popup_centered()
+	options_menu.show()
 
 
 func _on_main_button_pressed():
