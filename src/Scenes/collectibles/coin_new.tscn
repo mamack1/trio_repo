@@ -23,9 +23,10 @@ animations = [ {
 } ]
 
 [node name="coin_new" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 1 )
 script = ExtResource( 2 )
 
-[node name="AnimatedSprite" parent="." index="1"]
-modulate = Color( 1, 0.843137, 0, 1 )
+[node name="AnimatedSprite" parent="." index="0"]
+modulate = Color( 1, 0.807843, 0, 1 )
 frames = SubResource( 3 )
 frame = 1

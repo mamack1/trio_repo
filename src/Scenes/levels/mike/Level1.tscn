@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://util/test_player/test_player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/levels/mike/Level1_tilemap.tres" type="TileSet" id=2]
@@ -28,6 +28,13 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = SubResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0, 0, 0, 0.188235 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
@@ -99,33 +106,120 @@ font_data = ExtResource( 12 )
 [node name="Level1" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -6301.0
-margin_top = -3919.0
-margin_right = 5056.0
-margin_bottom = 3101.0
+visible = false
+margin_left = -6519.0
+margin_top = -3911.0
+margin_right = 4838.0
+margin_bottom = 3109.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="collectables" type="Node2D" parent="."]
 
 [node name="diamond" parent="collectables" instance=ExtResource( 8 )]
-position = Vector2( -3573, 140 )
+position = Vector2( 1240, 880 )
+
+[node name="diamond3" parent="collectables" instance=ExtResource( 8 )]
+position = Vector2( 1240, 384 )
+
+[node name="diamond4" parent="collectables" instance=ExtResource( 8 )]
+position = Vector2( 32, 696 )
 
 [node name="Key" parent="collectables" instance=ExtResource( 7 )]
-position = Vector2( -3675, 102 )
+position = Vector2( -1610, 672 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="new_coin" parent="collectables" instance=ExtResource( 9 )]
-modulate = Color( 1, 1, 1, 1 )
-position = Vector2( -3771, 58 )
+[node name="gem_new" parent="collectables" instance=ExtResource( 11 )]
+position = Vector2( -920, 752 )
 
-[node name="new_gem" parent="collectables" instance=ExtResource( 11 )]
-position = Vector2( -3521, 84 )
+[node name="gem_new5" parent="collectables" instance=ExtResource( 11 )]
+position = Vector2( 288, 808 )
+
+[node name="gem_new2" parent="collectables" instance=ExtResource( 11 )]
+position = Vector2( -2680, 448 )
+
+[node name="gem_new3" parent="collectables" instance=ExtResource( 11 )]
+position = Vector2( -3000, 752 )
+
+[node name="gem_new4" parent="collectables" instance=ExtResource( 11 )]
+position = Vector2( 41, -820 )
+
+[node name="coin_new" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 785, 78 )
+
+[node name="coin_new2" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 391, -1 )
+
+[node name="coin_new3" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( -281, 138 )
+
+[node name="coin_new4" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( -1103, 357 )
+
+[node name="coin_new5" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( -2117, 576 )
+
+[node name="coin_new6" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( -3171, 439 )
+
+[node name="coin_new7" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( -1638, -83 )
+
+[node name="coin_new8" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( -2360, 87 )
+
+[node name="coin_new9" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( -3000, 148 )
+
+[node name="coin_new10" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 40, -312 )
+
+[node name="coin_new12" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 40, -584 )
+
+[node name="coin_new16" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 40, -728 )
+
+[node name="coin_new17" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 40, -656 )
+
+[node name="coin_new13" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 40, -448 )
+
+[node name="coin_new14" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 40, -512 )
+
+[node name="coin_new15" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 40, -384 )
+
+[node name="coin_new11" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 32, 456 )
+
+[node name="coin_new23" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 920, 928 )
+
+[node name="coin_new18" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 1240, 208 )
+
+[node name="coin_new19" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 1080, 576 )
+
+[node name="coin_new20" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 400, 576 )
+
+[node name="coin_new21" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( 40, 568 )
+
+[node name="coin_new22" parent="collectables" instance=ExtResource( 9 )]
+position = Vector2( -3568, 128 )
 
 [node name="level_end" parent="." instance=ExtResource( 10 )]
 position = Vector2( -3927, 475 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( -3758, 145 )
+position = Vector2( -3864, 138 )
 
 [node name="spikes" type="Node2D" parent="."]
 
@@ -1957,11 +2051,11 @@ visible = false
 script = ExtResource( 13 )
 
 [node name="Panel" type="Panel" parent="HUD"]
-visible = false
-margin_left = 19.0
-margin_top = 19.0
-margin_right = 356.0
-margin_bottom = 228.0
+margin_left = 48.0
+margin_top = 32.0
+margin_right = 240.0
+margin_bottom = 208.0
+custom_styles/panel = SubResource( 27 )
 
 [node name="coin" type="AnimatedSprite" parent="HUD"]
 modulate = Color( 1, 0.843137, 0, 1 )
@@ -2053,6 +2147,34 @@ custom_fonts/font = SubResource( 14 )
 text = "##"
 valign = 1
 
-[connection signal="diamond_collected" from="collectables/diamond" to="HUD" method="_on_diamond_diamond_collected"]
-[connection signal="coin_collected" from="collectables/new_coin" to="HUD" method="_on_new_coin_coin_collected"]
-[connection signal="gem_collected" from="collectables/new_gem" to="HUD" method="_on_new_gem_gem_collected"]
+[connection signal="diamond_collected" from="collectables/diamond" to="HUD" method="_on_diamond_collected"]
+[connection signal="diamond_collected" from="collectables/diamond3" to="HUD" method="_on_diamond_collected"]
+[connection signal="diamond_collected" from="collectables/diamond4" to="HUD" method="_on_diamond_collected"]
+[connection signal="gem_collected" from="collectables/gem_new" to="HUD" method="_on_gem_collected"]
+[connection signal="gem_collected" from="collectables/gem_new5" to="HUD" method="_on_gem_collected"]
+[connection signal="gem_collected" from="collectables/gem_new2" to="HUD" method="_on_gem_collected"]
+[connection signal="gem_collected" from="collectables/gem_new3" to="HUD" method="_on_gem_collected"]
+[connection signal="gem_collected" from="collectables/gem_new4" to="HUD" method="_on_gem_collected"]
+[connection signal="coin_collected" from="collectables/coin_new" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new2" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new3" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new5" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new6" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new7" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new8" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new9" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new10" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new12" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new16" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new17" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new13" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new14" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new15" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new11" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new23" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new18" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new19" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new20" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new21" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="collectables/coin_new22" to="HUD" method="_on_coin_collected"]
