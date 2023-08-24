@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Assets/sprites/1bit_assets.png" type="Texture" id=1]
 [ext_resource path="res://scripts/collectibles/Gems.gd" type="Script" id=2]
-[ext_resource path="res://Assets/soundEffects/gem1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/audio/sounds_effects/gem1.wav" type="AudioStream" id=3]
+
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 16.0312

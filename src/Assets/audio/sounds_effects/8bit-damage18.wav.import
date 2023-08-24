@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/8bit-damage18.wav-55e269ecda1042a7fb9320002cf5a91a.sample"
+
+[deps]
+
+source_file="res://Assets/audio/sounds_effects/8bit-damage18.wav"
+dest_files=[ "res://.import/8bit-damage18.wav-55e269ecda1042a7fb9320002cf5a91a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

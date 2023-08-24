@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cyborg Ninja.mp3-4f3d145beafeda53e5e8012e918af1e3.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/music/Cyborg Ninja.mp3"
+dest_files=[ "res://.import/Cyborg Ninja.mp3-4f3d145beafeda53e5e8012e918af1e3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

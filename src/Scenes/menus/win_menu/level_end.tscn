@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Assets/sprites/new_tiles_mike.png" type="Texture" id=1]
 [ext_resource path="res://scripts/menus/win_menu/level_end.gd" type="Script" id=2]
-[ext_resource path="res://Assets/soundEffects/small_win.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/audio/sounds_effects/small_win.wav" type="AudioStream" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 43, 51.75 )
