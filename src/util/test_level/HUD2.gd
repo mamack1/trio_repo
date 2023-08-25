@@ -14,15 +14,18 @@ func _ready():
 
 func _on_diamond_collected():
 	diamond += 1
+	GlobalSettings.diamonds += 1
 	_ready()
 
 func _on_gem_collected():
 	gem += 1
+	GlobalSettings.gems += 1
 	_ready()
 
 
 func _on_coin_collected():
 	coin += 1
+	GlobalSettings.coins += 1
 	_ready()
 	
 func _on_key_collected():

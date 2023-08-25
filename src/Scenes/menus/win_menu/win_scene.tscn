@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/menus/win_menu/win_scene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/audio/sounds_effects/win_sound.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/sprites/player_sprite.png" type="Texture" id=4]
 [ext_resource path="res://Assets/sprites/background.png" type="Texture" id=5]
-[ext_resource path="res://Assets/sprites/happy-player.png" type="Texture" id=6]
+[ext_resource path="res://Assets/sprites/new_transparent.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=9]
 size = 120
@@ -22,8 +23,32 @@ font_data = ExtResource( 3 )
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 1, 1, 0.552941 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Bounce"
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 1200, 1200 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1200, 0, 1200, 1200 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2400, 0, 1200, 1200 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="Animation" id=14]
+resource_name = "Jump"
+length = 3.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -32,16 +57,16 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"times": PoolRealArray( 0, 1, 2, 2.5, 3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 115.75, 560.25 ), Vector2( 115.75, 591.25 ), Vector2( 115.75, 535.5 ), Vector2( 115.75, 577.75 ), Vector2( 115.75, 417 ) ]
+"values": [ Vector2( 192, 568 ), Vector2( 192, 568 ), Vector2( 192, 568 ), Vector2( 192, 400 ), Vector2( 192, 568 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=15]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("../HappyEnemy2:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -50,20 +75,96 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1129, 592 ) ]
+"values": [ Vector2( 192, 568 ) ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 135, 529 ) ]
-}
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 169, 0, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 338, 0, 169, 169 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="DynamicFont" id=19]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 338, 507, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 338, 676, 169, 169 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="DynamicFont" id=24]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 169, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 169, 169, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 338, 169, 169, 169 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 169, 169, 169, 169 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 26 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="DynamicFont" id=31]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 60
+font_data = ExtResource( 3 )
 
 [node name="win_scene" type="Node2D"]
 script = ExtResource( 1 )
@@ -73,86 +174,179 @@ position = Vector2( 640, 363 )
 scale = Vector2( 10.1825, 5.736 )
 texture = ExtResource( 5 )
 
-[node name="Happy-player" type="Sprite" parent="."]
-position = Vector2( 1153, 537 )
-rotation = -0.00233045
-scale = Vector2( 1.30373, 1.36372 )
-texture = ExtResource( 6 )
-
-[node name="Happy-player2" type="Sprite" parent="."]
-modulate = Color( 0.0666667, 0.666667, 0.313726, 1 )
-position = Vector2( 935, 502 )
-rotation = -0.66299
-scale = Vector2( 0.999781, 1.04569 )
-texture = ExtResource( 6 )
-
-[node name="Happy-player3" type="Sprite" parent="."]
-modulate = Color( 0, 0.117647, 1, 1 )
-position = Vector2( 1152, 209 )
-rotation = -0.45083
-scale = Vector2( 0.805812, 0.811112 )
-texture = ExtResource( 6 )
-
-[node name="Happy-player4" type="Sprite" parent="."]
-modulate = Color( 0, 1, 0.976471, 1 )
-position = Vector2( 1024, 320 )
-rotation = -0.213653
-scale = Vector2( 0.659443, 0.674015 )
-texture = ExtResource( 6 )
-
-[node name="Happy-player5" type="Sprite" parent="."]
-modulate = Color( 0.352941, 0.156863, 0.960784, 1 )
-position = Vector2( 960, 128 )
-rotation = -0.660128
-scale = Vector2( 0.588697, 0.603144 )
-texture = ExtResource( 6 )
-
-[node name="HappyPlayer1" type="Sprite" parent="."]
-modulate = Color( 0.282353, 0.890196, 0.101961, 1 )
-position = Vector2( 135, 529 )
-scale = Vector2( 0.956724, 0.987631 )
-texture = ExtResource( 6 )
-
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 320.0
-margin_top = 72.0
-margin_right = 896.0
-margin_bottom = 186.0
-custom_colors/default_color = Color( 0.282353, 0.890196, 0.101961, 1 )
+margin_left = 136.0
+margin_top = 24.0
+margin_right = 1168.0
+margin_bottom = 138.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_fonts/normal_font = SubResource( 9 )
-text = "YOU WIN!"
+text = "Level Completed"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 192.0
-margin_top = 256.0
-margin_right = 960.0
-margin_bottom = 305.0
+margin_left = 480.0
+margin_top = 448.0
+margin_right = 744.0
+margin_bottom = 497.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_fonts/normal_font = SubResource( 2 )
-text = "Click Button to go back to main menu"
+text = "Coming Soon!"
 
-[node name="Button" type="Button" parent="."]
-margin_left = 384.0
-margin_top = 330.0
-margin_right = 753.0
-margin_bottom = 414.0
+[node name="main_menu" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 600.0
+margin_right = 793.0
+margin_bottom = 684.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 text = "MAIN MENU"
+
+[node name="next_lvl_button" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 496.0
+margin_right = 793.0
+margin_bottom = 580.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "Next Level"
 
 [node name="win_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -21.357
 autoplay = true
 
-[node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
-root_node = NodePath("../HappyPlayer1")
-autoplay = "Bounce"
-anims/Bounce = SubResource( 5 )
-anims/RESET = SubResource( 6 )
-
 [node name="timeout" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="Player" type="AnimatedSprite" parent="."]
+position = Vector2( 192, 568 )
+frames = SubResource( 13 )
+frame = 2
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+anims/Jump = SubResource( 14 )
+anims/RESET = SubResource( 15 )
+
+[node name="coin" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0.807843, 0, 1 )
+position = Vector2( 104, 272 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 18 )
+playing = true
+
+[node name="coin_counter" type="Label" parent="."]
+margin_left = 208.0
+margin_top = 200.0
+margin_right = 294.0
+margin_bottom = 264.0
+custom_colors/font_color = Color( 1, 0.807843, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 19 )
+text = "##"
+valign = 1
+
+[node name="line" type="Label" parent="."]
+margin_left = 288.0
+margin_top = 248.0
+margin_right = 335.0
+margin_bottom = 311.0
+custom_colors/font_color = Color( 1, 0.807843, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "/"
+valign = 1
+
+[node name="coin_num" type="Label" parent="."]
+margin_left = 328.0
+margin_top = 280.0
+margin_right = 402.0
+margin_bottom = 343.0
+custom_colors/font_color = Color( 1, 0.807843, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "23"
+valign = 1
+
+[node name="diamond" type="AnimatedSprite" parent="."]
+modulate = Color( 0.101961, 1, 0.976471, 1 )
+position = Vector2( 536, 272 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 23 )
+playing = true
+
+[node name="line2" type="Label" parent="."]
+modulate = Color( 0.101961, 1, 0.976471, 1 )
+margin_left = 688.0
+margin_top = 248.0
+margin_right = 735.0
+margin_bottom = 309.0
+custom_colors/font_color = Color( 0.227451, 0.647059, 0.764706, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "/"
+valign = 1
+
+[node name="diamond_counter" type="Label" parent="."]
+modulate = Color( 0.101961, 1, 0.976471, 1 )
+margin_left = 624.0
+margin_top = 208.0
+margin_right = 766.0
+margin_bottom = 272.0
+custom_colors/font_color = Color( 0.227451, 0.647059, 0.764706, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "##"
+valign = 1
+
+[node name="diamond_num" type="Label" parent="."]
+modulate = Color( 0.101961, 1, 0.976471, 1 )
+margin_left = 744.0
+margin_top = 248.0
+margin_right = 791.0
+margin_bottom = 359.0
+custom_colors/font_color = Color( 0.227451, 0.647059, 0.764706, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "6"
+valign = 1
+
+[node name="gem" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0, 0.423529, 1 )
+position = Vector2( 904, 256 )
+frames = SubResource( 30 )
+frame = 3
+playing = true
+
+[node name="line3" type="Label" parent="."]
+modulate = Color( 1, 0, 0.423529, 1 )
+margin_left = 1088.0
+margin_top = 256.0
+margin_right = 1135.0
+margin_bottom = 319.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 31 )
+text = "/"
+valign = 1
+
+[node name="gem_counter" type="Label" parent="."]
+modulate = Color( 1, 0, 0.423529, 1 )
+margin_left = 1000.0
+margin_top = 208.0
+margin_right = 1086.0
+margin_bottom = 272.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 32 )
+text = "##"
+valign = 1
+
+[node name="gem_num" type="Label" parent="."]
+modulate = Color( 1, 0, 0.423529, 1 )
+margin_left = 1128.0
+margin_top = 280.0
+margin_right = 1175.0
+margin_bottom = 343.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 31 )
+text = "4"
+valign = 1
+
+[connection signal="pressed" from="main_menu" to="." method="_on_Button_pressed"]
