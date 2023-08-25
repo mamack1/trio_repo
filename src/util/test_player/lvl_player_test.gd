@@ -116,6 +116,7 @@ func _on_hazardDetect_area_entered(_area):
 	if animated_sprite_2d.flip_v:
 		grav_shift()
 	is_dead = true
+	$death_sound.play()
 	animated_sprite_2d.hide()
 	death_timer.start()
 	

@@ -2166,6 +2166,7 @@ modulate = Color( 1, 0.682353, 0, 1 )
 position = Vector2( 136, 231 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 30 )
+frame = 1
 playing = true
 
 [node name="level_end" parent="." instance=ExtResource( 10 )]
