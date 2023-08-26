@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/8bit-damage11.wav-74c0deb05b66db273e9590be276c6a07.sample"
+
+[deps]
+
+source_file="res://Assets/audio/sfx_dump/8bit-damage11.wav"
+dest_files=[ "res://.import/8bit-damage11.wav-74c0deb05b66db273e9590be276c6a07.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
