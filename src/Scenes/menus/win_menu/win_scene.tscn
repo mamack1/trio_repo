@@ -23,60 +23,38 @@ font_data = ExtResource( 3 )
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 1, 1, 0.552941 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 1200, 1200 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 1200, 0, 1200, 1200 )
+region = Rect2( 4800, 0, 1200, 1200 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=35]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 2400, 0, 1200, 1200 )
+region = Rect2( 6000, 0, 1200, 1200 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 7200, 0, 1200, 1200 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 8400, 0, 1200, 1200 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
 "loop": true,
 "name": "default",
-"speed": 1.0
+"speed": 10.0
 } ]
-
-[sub_resource type="Animation" id=14]
-resource_name = "Jump"
-length = 3.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 2.5, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 192, 568 ), Vector2( 192, 568 ), Vector2( 192, 568 ), Vector2( 192, 400 ), Vector2( 192, 568 ) ]
-}
-
-[sub_resource type="Animation" id=15]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 192, 568 ) ]
-}
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
@@ -216,24 +194,20 @@ volume_db = -21.357
 autoplay = true
 
 [node name="timeout" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="Player" type="AnimatedSprite" parent="."]
 position = Vector2( 192, 568 )
 frames = SubResource( 13 )
-frame = 2
+frame = 3
 playing = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-anims/Jump = SubResource( 14 )
-anims/RESET = SubResource( 15 )
 
 [node name="coin" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 0.807843, 0, 1 )
 position = Vector2( 104, 272 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 18 )
+frame = 1
 playing = true
 
 [node name="coin_counter" type="Label" parent="."]
@@ -272,6 +246,7 @@ modulate = Color( 0.101961, 1, 0.976471, 1 )
 position = Vector2( 536, 272 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 23 )
+frame = 1
 playing = true
 
 [node name="line2" type="Label" parent="."]
@@ -312,7 +287,7 @@ valign = 1
 modulate = Color( 1, 0, 0.423529, 1 )
 position = Vector2( 904, 256 )
 frames = SubResource( 30 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="line3" type="Label" parent="."]
@@ -350,3 +325,4 @@ text = "4"
 valign = 1
 
 [connection signal="pressed" from="main_menu" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="timeout" to="." method="_on_timeout_timeout"]
