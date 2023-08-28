@@ -2075,6 +2075,7 @@ modulate = Color( 1, 0.843137, 0, 1 )
 position = Vector2( 70, 60 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 17 )
+frame = 1
 playing = true
 
 [node name="diamond" type="AnimatedSprite" parent="HUD"]
@@ -2082,6 +2083,7 @@ modulate = Color( 0.101961, 1, 0.976471, 1 )
 position = Vector2( 70, 121 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 22 )
+frame = 1
 playing = true
 
 [node name="gem" type="AnimatedSprite" parent="HUD"]
@@ -2089,7 +2091,6 @@ modulate = Color( 1, 0, 0.423529, 1 )
 position = Vector2( 71, 191 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 26 )
-frame = 2
 playing = true
 
 [node name="x" type="Label" parent="HUD"]
@@ -2167,6 +2168,39 @@ scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 30 )
 frame = 1
 playing = true
+
+[node name="control_panel" type="Panel" parent="HUD"]
+margin_left = 53.0
+margin_top = 655.0
+margin_right = 1226.0
+margin_bottom = 713.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="control_text" type="Label" parent="HUD"]
+margin_left = 59.0
+margin_top = 667.0
+margin_right = 2383.0
+margin_bottom = 730.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "        Pause                       Jump                                        Run                       Grav Shift"
+valign = 1
+uppercase = true
+
+[node name="control_text2" type="Label" parent="HUD"]
+margin_left = 59.0
+margin_top = 667.0
+margin_right = 2383.0
+margin_bottom = 730.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "ESC:               Up-Arrow:            Arrow Left/Right:          Space Bar: "
+valign = 1
+uppercase = true
 
 [node name="level_end" parent="." instance=ExtResource( 10 )]
 position = Vector2( -3932, 473 )
