@@ -8,3 +8,7 @@ func _ready():
 	$coin_counter.text = str(GlobalSettings.coins)
 	$diamond_counter.text = str(GlobalSettings.diamonds)
 	$gem_counter.text = str(GlobalSettings.gems)
+
+
+func _on_timeout_timeout():
+	$AnimationPlayer.play("Jump")
