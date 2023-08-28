@@ -3,6 +3,7 @@ extends Node
 var coins = 0
 var diamonds = 0
 var gems = 0
+var deaths = 0
 
 
 func toggle_fullscreen(value):

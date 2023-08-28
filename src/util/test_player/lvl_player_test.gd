@@ -129,6 +129,7 @@ func _on_player_reset_timeout():
 #	inverter.hide()
 #	death_timer.stop()
 #	animated_sprite_2d.show()
+	GlobalSettings.deaths += 1
 	get_tree(). reload_current_scene()
 	GlobalSettings.coins = 0
 	GlobalSettings.diamonds = 0
