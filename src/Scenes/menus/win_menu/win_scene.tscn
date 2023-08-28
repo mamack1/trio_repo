@@ -199,7 +199,7 @@ one_shot = true
 [node name="Player" type="AnimatedSprite" parent="."]
 position = Vector2( 192, 568 )
 frames = SubResource( 13 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="coin" type="AnimatedSprite" parent="."]
@@ -287,7 +287,7 @@ valign = 1
 modulate = Color( 1, 0, 0.423529, 1 )
 position = Vector2( 904, 256 )
 frames = SubResource( 30 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="line3" type="Label" parent="."]
