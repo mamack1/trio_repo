@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/menus/win_menu/win_scene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/audio/sounds_effects/win_sound.wav" type="AudioStream" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/sprites/player_sprite.png" type="Texture" id=4]
 [ext_resource path="res://Assets/sprites/background.png" type="Texture" id=5]
 [ext_resource path="res://Assets/sprites/new_transparent.png" type="Texture" id=6]
+[ext_resource path="res://Assets/sprites/new_tiles_mike.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=9]
 size = 120
@@ -199,7 +200,6 @@ one_shot = true
 [node name="Player" type="AnimatedSprite" parent="."]
 position = Vector2( 192, 568 )
 frames = SubResource( 13 )
-frame = 4
 playing = true
 
 [node name="coin" type="AnimatedSprite" parent="."]
@@ -207,7 +207,6 @@ modulate = Color( 1, 0.807843, 0, 1 )
 position = Vector2( 104, 272 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 18 )
-frame = 1
 playing = true
 
 [node name="coin_counter" type="Label" parent="."]
@@ -246,7 +245,6 @@ modulate = Color( 0.101961, 1, 0.976471, 1 )
 position = Vector2( 536, 272 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 23 )
-frame = 1
 playing = true
 
 [node name="line2" type="Label" parent="."]
@@ -287,7 +285,7 @@ valign = 1
 modulate = Color( 1, 0, 0.423529, 1 )
 position = Vector2( 904, 256 )
 frames = SubResource( 30 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="line3" type="Label" parent="."]
@@ -322,6 +320,25 @@ margin_bottom = 343.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 31 )
 text = "4"
+valign = 1
+
+[node name="death" type="Sprite" parent="."]
+position = Vector2( 1076, 514 )
+texture = ExtResource( 7 )
+hframes = 21
+vframes = 21
+frame = 352
+
+[node name="death_counter" type="Label" parent="."]
+margin_left = 992.0
+margin_top = 595.0
+margin_right = 1078.0
+margin_bottom = 664.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 32 )
+text = "##"
 valign = 1
 
 [connection signal="pressed" from="main_menu" to="." method="_on_Button_pressed"]

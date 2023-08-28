@@ -125,7 +125,6 @@ shader = SubResource( 12 )
 [node name="Level1" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 margin_left = -6519.0
 margin_top = -3911.0
 margin_right = 4838.0
@@ -134,7 +133,7 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( -3887, 144 )
+position = Vector2( -3889, 148 )
 
 [node name="collectables" type="Node2D" parent="."]
 
@@ -2076,7 +2075,6 @@ modulate = Color( 1, 0.843137, 0, 1 )
 position = Vector2( 70, 60 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 17 )
-frame = 1
 playing = true
 
 [node name="diamond" type="AnimatedSprite" parent="HUD"]
@@ -2084,7 +2082,6 @@ modulate = Color( 0.101961, 1, 0.976471, 1 )
 position = Vector2( 70, 121 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 22 )
-frame = 1
 playing = true
 
 [node name="gem" type="AnimatedSprite" parent="HUD"]
@@ -2168,6 +2165,7 @@ modulate = Color( 1, 0.682353, 0, 1 )
 position = Vector2( 136, 231 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 30 )
+frame = 1
 playing = true
 
 [node name="level_end" parent="." instance=ExtResource( 10 )]
