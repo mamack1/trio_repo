@@ -2091,6 +2091,7 @@ modulate = Color( 1, 0, 0.423529, 1 )
 position = Vector2( 71, 191 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 26 )
+frame = 2
 playing = true
 
 [node name="x" type="Label" parent="HUD"]
