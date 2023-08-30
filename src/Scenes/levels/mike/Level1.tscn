@@ -2069,12 +2069,18 @@ margin_right = 240.0
 margin_bottom = 208.0
 custom_styles/panel = SubResource( 27 )
 
+[node name="Panel2" type="Panel" parent="HUD"]
+margin_left = 64.0
+margin_top = 647.0
+margin_right = 1216.0
+margin_bottom = 695.0
+custom_styles/panel = SubResource( 27 )
+
 [node name="coin" type="AnimatedSprite" parent="HUD"]
 modulate = Color( 1, 0.843137, 0, 1 )
 position = Vector2( 70, 60 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 17 )
-frame = 1
 playing = true
 
 [node name="diamond" type="AnimatedSprite" parent="HUD"]
@@ -2082,7 +2088,6 @@ modulate = Color( 0.101961, 1, 0.976471, 1 )
 position = Vector2( 70, 121 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 22 )
-frame = 1
 playing = true
 
 [node name="gem" type="AnimatedSprite" parent="HUD"]
@@ -2125,6 +2130,32 @@ custom_fonts/font = SubResource( 13 )
 text = "x"
 valign = 1
 
+[node name="control_text" type="Label" parent="HUD"]
+margin_left = 67.0
+margin_top = 659.0
+margin_right = 2372.0
+margin_bottom = 722.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0.262745, 0.396078, 0.796078, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "        Pause                       Jump                                        Run                       Grav Shift"
+valign = 1
+uppercase = true
+
+[node name="control_text2" type="Label" parent="HUD"]
+margin_left = 64.0
+margin_top = 659.0
+margin_right = 2388.0
+margin_bottom = 722.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "ESC:               Up-Arrow:            Arrow Left/Right:          Space Bar: "
+valign = 1
+uppercase = true
+
 [node name="Coin_counter" type="Label" parent="HUD"]
 margin_left = 165.0
 margin_top = 27.0
@@ -2166,41 +2197,7 @@ modulate = Color( 1, 0.682353, 0, 1 )
 position = Vector2( 136, 231 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 30 )
-frame = 1
 playing = true
-
-[node name="control_panel" type="Panel" parent="HUD"]
-margin_left = 53.0
-margin_top = 655.0
-margin_right = 1226.0
-margin_bottom = 713.0
-custom_styles/panel = SubResource( 27 )
-
-[node name="control_text" type="Label" parent="HUD"]
-margin_left = 59.0
-margin_top = 667.0
-margin_right = 2383.0
-margin_bottom = 730.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 13 )
-text = "        Pause                       Jump                                        Run                       Grav Shift"
-valign = 1
-uppercase = true
-
-[node name="control_text2" type="Label" parent="HUD"]
-margin_left = 59.0
-margin_top = 667.0
-margin_right = 2383.0
-margin_bottom = 730.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 13 )
-text = "ESC:               Up-Arrow:            Arrow Left/Right:          Space Bar: "
-valign = 1
-uppercase = true
 
 [node name="level_end" parent="." instance=ExtResource( 10 )]
 position = Vector2( -3932, 473 )
