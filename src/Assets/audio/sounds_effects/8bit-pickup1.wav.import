@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/8bit-pickup1.wav-a5c4135d5d2b4fdcd41787254190813d.sample"
+
+[deps]
+
+source_file="res://Assets/audio/sounds_effects/8bit-pickup1.wav"
+dest_files=[ "res://.import/8bit-pickup1.wav-a5c4135d5d2b4fdcd41787254190813d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
