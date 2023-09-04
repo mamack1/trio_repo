@@ -21,8 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Techwise Trio Project"
-run/main_scene="res://scenes/menus/main_manu/Main.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Main.tscn"
 
 [audio]
 
@@ -94,5 +93,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"

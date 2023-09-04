@@ -1,0 +1,159 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/fonts/1-BitFont.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/menus/main_menu/Main.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/menus/options_menu/options_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/styles/black_pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/styles/black_normal.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/styles/black_hover.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/styles/white_normal.tres" type="StyleBox" id=7]
+[ext_resource path="res://assets/styles/white_pressed.tres" type="StyleBox" id=8]
+[ext_resource path="res://assets/styles/white_hover.tres" type="StyleBox" id=9]
+[ext_resource path="res://Assets/audio/music/Cyborg Ninja.mp3" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 61
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 43
+font_data = ExtResource( 1 )
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 0.5
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="flip" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 151.0
+margin_right = 638.0
+margin_bottom = 206.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+text = "FLIP"
+align = 2
+valign = 1
+
+[node name="flop" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 642.0
+margin_top = 151.0
+margin_right = 1280.0
+margin_bottom = 206.0
+rect_pivot_offset = Vector2( 64.683, 25.183 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "FLOP"
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 362.0
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="start_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 638.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+text = "START"
+icon_align = 1
+
+[node name="options_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 642.0
+margin_right = 1280.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 7 )
+text = "OPTIONS"
+icon_align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 181.0
+margin_right = 1280.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="quit_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 638.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+text = "QUIT"
+icon_align = 1
+
+[node name="credits_button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 642.0
+margin_right = 1280.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 7 )
+text = "CREDITS"
+icon_align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+bus = "Music"
+
+[node name="options_menu" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/credits_button" to="." method="_on_credits_button_pressed"]
