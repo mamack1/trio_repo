@@ -2,7 +2,7 @@ extends Node2D
 
 func _on_Button_pressed():
 	GlobalSettings.deaths = 0
-	get_tree().change_scene("res://Scenes/menus/main_manu/Main.tscn")
+	get_tree().change_scene("res://Main.tscn")
 	$win_sound.play()
 
 func _ready():

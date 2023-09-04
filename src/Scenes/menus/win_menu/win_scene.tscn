@@ -200,6 +200,7 @@ one_shot = true
 [node name="Player" type="AnimatedSprite" parent="."]
 position = Vector2( 192, 568 )
 frames = SubResource( 13 )
+frame = 2
 playing = true
 
 [node name="coin" type="AnimatedSprite" parent="."]
@@ -207,6 +208,7 @@ modulate = Color( 1, 0.807843, 0, 1 )
 position = Vector2( 104, 272 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 18 )
+frame = 1
 playing = true
 
 [node name="coin_counter" type="Label" parent="."]
@@ -245,6 +247,7 @@ modulate = Color( 0.101961, 1, 0.976471, 1 )
 position = Vector2( 536, 272 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 23 )
+frame = 1
 playing = true
 
 [node name="line2" type="Label" parent="."]
@@ -285,7 +288,6 @@ valign = 1
 modulate = Color( 1, 0, 0.423529, 1 )
 position = Vector2( 904, 256 )
 frames = SubResource( 30 )
-frame = 2
 playing = true
 
 [node name="line3" type="Label" parent="."]
