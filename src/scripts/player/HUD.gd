@@ -39,7 +39,7 @@ func set_score(value):
 	get_node("/root/Hud/Display/SCORE").set_text("SCORE: "+ str(score))
 	if score >= max_score:
 		get_tree().change_scene("res://Scenes/menus/win_menu/win_scene.tscn")
-		
+	
 		score = 0
 		health = 3
 		get_node("/root/Hud/Display/SCORE").set_text("SCORE: "+ str(score))

@@ -1,12 +1,12 @@
 extends Control
 
-onready var options = get_node("res://test_options.tscn")
+#onready var options = get_node("res://test_options.tscn")
 
 #settings
-onready var fullscreen_val = $Options/OptionsGrid/FCButton
-onready var master_val = $Options/OptionsGrid/MasterSlider
-onready var sfx_val = $Options/OptionsGrid/SfxSlider
-onready var music_val = $Options/OptionsGrid/MusicSlider 
+#onready var fullscreen_val = $Options/OptionsGrid/FCButton
+#onready var master_val = $Options/OptionsGrid/MasterSlider
+#onready var sfx_val = $Options/OptionsGrid/SfxSlider
+#onready var music_val = $Options/OptionsGrid/MusicSlider 
 
 
 #func _ready():

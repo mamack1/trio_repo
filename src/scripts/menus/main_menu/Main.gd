@@ -15,4 +15,4 @@ func _on_quit_button_pressed():
 
 
 func _on_credits_button_pressed():
-	get_tree().change_scene("res://scenes/menus/credits_menu/credits.tscn")
+	get_tree().change_scene("res://Scenes/menus/credits_menu/credits.tscn")
