@@ -13,7 +13,7 @@ Flip Flop is ready to play on itch.io! Check it out and feel free to leave your 
 
 <!-- [https://mmack.itch.io/flip-flop](https://mmack.itch.io/flip-flop) -->
 
-<a href="https://mmack.itch.io/flip-flop" target="_blank">Flip Flop</a>
+<a href="https://mmack.itch.io/flip-flop" target="_blank" rel="noopener noreferrer">PLAY</a>
 
 Flip Flop:
 
