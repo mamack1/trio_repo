@@ -11,7 +11,7 @@ This is Flip Flop. We developed this game as our first project for Techwise Coho
 **UPDATE**
 Flip Flop is ready to play on itch.io! Check it out and feel free to leave your feedback.
 
-[PLAY](https://mmack.itch.io/flip-flop)
+[PLAY NOW!](https://mmack.itch.io/flip-flop) (Right-click and select "Open Link in New Tab")
 
 Flip Flop:
 
